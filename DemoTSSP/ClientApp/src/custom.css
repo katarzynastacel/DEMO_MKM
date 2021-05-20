@@ -1,14 +1,66 @@
-/* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+html {
+  font-size: 62.5% !important;
+  scroll-behavior: smooth !important;
+  /*   @include respond(tab-land) {
+    font-size: 56.2%; //1 rem = 9px   9px/16px = 56.25%
+  }
+
+  @include respond(tab-port) {
+    font-size: 50%; //1 rem = 8px   8px/16px = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; // 1rem = 12px, 12px/16px = 75px
+  } */
+}
+@media screen and (max-width: 1250px) {
+  html {
+    font-size: 50.5% !important;
+  }
+}
+@media screen and (max-width: 900px) {
+  html {
+    font-size: 40.5% !important;
+  }
 }
 
-code {
-  color: #E01A76;
+.tabs a {
+  font-size: 1.4rem;
+  border-bottom-color: #00d1b2 !important;
+  position: relative;
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.tabs li.is-active a {
+  border-bottom-color: #00d1b2 !important;
+  color: white !important;
+  background-color: #00d1b2;
+}
+
+.tabs ul {
+  border-bottom-color: #00d1b2 !important;
+}
+
+.badge-notification {
+  position: absolute;
+  top: 4px;
+  height: 15px;
+  width: 15px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  right: 4px;
+  background: #ff3860;
+  color: white;
+  padding: 1px 1px;
+  border-radius: 100px;
+}
+
+.heading-info-text-primary {
+  font-style: italic;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  color: #00d1b2;
+}
+.heading-info-text-primary:hover {
+  text-shadow: 0.5rem 1rem 2rem rgba(0, 0, 0, 0.5);
 }

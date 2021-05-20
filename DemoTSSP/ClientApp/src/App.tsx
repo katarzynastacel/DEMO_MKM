@@ -1,21 +1,37 @@
-import React, { Component } from "react";
-import { Route } from "react-router";
-import { Layout } from "./components/Layout";
-import { Home } from "./components/Home";
-import { FetchData } from "./components/FetchData";
-import { Counter } from "./components/Counter";
-
+import "bulma/css/bulma.css";
+import React, { useState, lazy } from "react";
+import { Link, Route } from "react-router-dom";
 import "./custom.css";
+import { DemoTabs } from "./ui/Modules/shared/demoTabs";
+
+const DEMO_ADMINClockInAdminPage = lazy(
+  () => import("./ui/Modules/clockIn/demoAdmin")
+);
 
 interface IAppProps {
   className?: string;
 }
-const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
+export const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
+  const [isLoading, setIsLoading] = useState(false);
   return (
-    <Layout>
-      <Route exact path="/" component={Home} />
-      <Route path="/counter" component={Counter} />
-      <Route path="/fetch-data" component={FetchData} />
-    </Layout>
+    <>
+      <Route exact path="/">
+        <>
+          <p>Witaj w demo mkm wybierz modul</p>
+
+          <ul className="li">
+            <Link to="/demo/clock-in/admin">Ewidencja Czasu pracy - ADMIN</Link>
+          </ul>
+          <ul className="li"></ul>
+        </>
+      </Route>
+
+      <Route exact path="/demo/clock-in/admin">
+        <>
+          <DemoTabs currentActive={1} />
+          <DEMO_ADMINClockInAdminPage />
+        </>
+      </Route>
+    </>
   );
 };
