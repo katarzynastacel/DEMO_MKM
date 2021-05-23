@@ -1,11 +1,10 @@
-import React, { useState, useContext, useEffect } from "react";
+import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
-
 import { Spinner } from "../../shared/spinner";
+import { EditStartEndTimeAdminModal } from "./editStartEndTimeAdmin";
 import { LocationModal } from "./locationMap";
 
-import { EditStartEndTimeAdminModal } from "./editStartEndTimeAdmin";
-import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
 interface IComponent {
   className?: string;
   currentStep: number;

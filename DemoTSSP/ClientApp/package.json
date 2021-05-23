@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@syncfusion/ej2-react-calendars": "^19.1.64",
+    "@syncfusion/ej2-react-charts": "^19.1.64",
     "@syncfusion/ej2-react-dropdowns": "^19.1.64",
     "@syncfusion/ej2-react-grids": "^19.1.64",
     "@types/jest": "^26.0.23",
@@ -37,6 +38,7 @@
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.3",
+    "gzipper": "^3.7.0",
     "nan": "^2.14.1",
     "typescript": "^3.9.9"
   },
@@ -45,7 +47,7 @@
   },
   "scripts": {
     "start": "rimraf ./build && react-scripts start",
-    "build": "react-scripts build",
+    "build": "set \"GENERATE_SOURCEMAP=false\" && react-scripts build -p && gzipper --verbose ./build",
     "test": "cross-env CI=true react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "lint": "eslint ./src/"

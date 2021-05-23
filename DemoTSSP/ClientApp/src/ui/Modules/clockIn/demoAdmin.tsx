@@ -1,19 +1,11 @@
-import React, { useEffect, useState, lazy } from "react";
+import React, { useEffect, useState } from "react";
 import Joyride, { ACTIONS, EVENTS, STATUS, Step } from "react-joyride";
 import styled from "styled-components";
-import { SendMeEmail } from "../../../helpers/sendMeInfoMessage";
+import { DEMO_HeaderStats } from "./admin/demoHeaderStats";
+import { DEMO_HistoryTableByUser } from "./admin/demoHistoryTableByUser";
+import { DEMO_UsersStateTodayTable } from "./admin/demoTodayUsersState";
+import { DEMO_UsersWorkingHoursStats } from "./admin/demoWorkingHoursStats";
 import { DEMO_WorkingHoursChangeAdmin } from "./admin/demoWorkingtimeChange";
-const DEMO_UsersStateTodayTable = lazy(
-  () => import("./admin/demoTodayUsersState")
-);
-
-const DEMO_HeaderStats = lazy(() => import("./admin/demoHeaderStats"));
-
-const DEMO_HistoryTableByUser = lazy(
-  () => import("./admin/demoHistoryTableByUser")
-);
-
-/*import { DEMO_UsersWorkingHoursStats } from "./demoJourney/admin/demoWorkinghoursStats"; */
 
 interface IComponent {
   className?: string;
@@ -430,7 +422,7 @@ const Component: React.FunctionComponent<IComponent> = (props: IComponent) => {
       hideBackButton: true,
     },
     {
-      target: ".ride-step16",
+      target: ".ride-step15",
       title: (
         <b>
           {" "}
@@ -448,6 +440,7 @@ const Component: React.FunctionComponent<IComponent> = (props: IComponent) => {
       content: <p>Wnioski zostały załadowane</p>,
       hideCloseButton: true,
       hideBackButton: true,
+      placement: "center",
     },
     {
       target: ".ride-step17",
@@ -724,13 +717,22 @@ const Component: React.FunctionComponent<IComponent> = (props: IComponent) => {
     }
   }, [currentStep]);
 
+  const HandleTabClick = (type: CurrentActiveTab) => {
+    return () => {
+      setCurrentActive(type);
+    };
+  };
+
+  const HandleStartJoyRide = () => {
+    setRunJoyRide(true);
+    setCurrentActive(CurrentActiveTab.TODAY);
+  };
   return (
     <div className={props.className}>
       <p className="has-text-centered">
-        {" "}
         <button
-          onClick={() => setRunJoyRide(true)}
-          className="button is-info animate-demo-btn is-large"
+          onClick={HandleStartJoyRide}
+          className="button is-dark has-text-warning animate-demo-btn is-large"
         >
           Rozpocznij Tutorial
         </button>
@@ -752,54 +754,48 @@ const Component: React.FunctionComponent<IComponent> = (props: IComponent) => {
 
       <div className="tabs is-centered">
         <ul>
-          {true && (
-            <li
-              className={` ${
-                currentActive == CurrentActiveTab.TODAY ? "is-active" : ""
-              } `}
-            >
-              <a>Dzisiaj</a>
-            </li>
-          )}
+          <li
+            onClick={HandleTabClick(CurrentActiveTab.TODAY)}
+            className={` ${
+              currentActive == CurrentActiveTab.TODAY ? "is-active" : ""
+            } `}
+          >
+            <a>Dzisiaj</a>
+          </li>
 
-          {true && (
-            <li
-              className={`ride-step6 ${
-                currentActive == CurrentActiveTab.HISTORYUSER ? "is-active" : ""
-              } `}
-            >
-              <a>Obecność Pracownika</a>
-            </li>
-          )}
+          <li
+            onClick={HandleTabClick(CurrentActiveTab.HISTORYUSER)}
+            className={`ride-step6 ${
+              currentActive == CurrentActiveTab.HISTORYUSER ? "is-active" : ""
+            } `}
+          >
+            <a>Obecność Pracownika</a>
+          </li>
 
-          {true && (
-            <li
-              className={`ride-step10 ${
-                currentActive == CurrentActiveTab.WORKINGTIMECHANGE
-                  ? "is-active"
-                  : ""
-              } `}
-            >
-              <a>
-                Zmiany Godzin Pracy
-                {true && (
-                  <>
-                    <span className="badge-notification">1</span>
-                  </>
-                )}
-              </a>
-            </li>
-          )}
+          <li
+            onClick={HandleTabClick(CurrentActiveTab.WORKINGTIMECHANGE)}
+            className={`ride-step10 ${
+              currentActive == CurrentActiveTab.WORKINGTIMECHANGE
+                ? "is-active"
+                : ""
+            } `}
+          >
+            <a>
+              Zmiany Godzin Pracy
+              <>
+                <span className="badge-notification">1</span>
+              </>
+            </a>
+          </li>
 
-          {true && (
-            <li
-              className={`ride-step18 ${
-                currentActive == CurrentActiveTab.SUMALLHOURS ? "is-active" : ""
-              } `}
-            >
-              <a>Podsumowanie Godzin</a>
-            </li>
-          )}
+          <li
+            onClick={HandleTabClick(CurrentActiveTab.SUMALLHOURS)}
+            className={`ride-step18 ${
+              currentActive == CurrentActiveTab.SUMALLHOURS ? "is-active" : ""
+            } `}
+          >
+            <a>Podsumowanie Godzin</a>
+          </li>
         </ul>
       </div>
       <div className="clock-in-admin-sub-pages-container">
@@ -811,11 +807,10 @@ const Component: React.FunctionComponent<IComponent> = (props: IComponent) => {
         )}
         {currentActive == CurrentActiveTab.WORKINGTIMECHANGE && (
           <DEMO_WorkingHoursChangeAdmin currentStep={currentStep} />
-        )}{" "}
-        {/*  
+        )}
         {currentActive == CurrentActiveTab.SUMALLHOURS && (
           <DEMO_UsersWorkingHoursStats currentStep={currentStep} />
-        )} */}
+        )}
       </div>
     </div>
   );

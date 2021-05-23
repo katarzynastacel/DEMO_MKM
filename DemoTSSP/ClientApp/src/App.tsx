@@ -8,6 +8,10 @@ const DEMO_ADMINClockInAdminPage = lazy(
   () => import("./ui/Modules/clockIn/demoAdmin")
 );
 
+const DEMO_User_ClockInMasterPage = lazy(
+  () => import("./ui/Modules/clockIn/demoUser")
+);
+
 interface IAppProps {
   className?: string;
 }
@@ -22,14 +26,24 @@ export const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
           <ul className="li">
             <Link to="/demo/clock-in/admin">Ewidencja Czasu pracy - ADMIN</Link>
           </ul>
+
+          <ul className="li">
+            <Link to="/demo/clock-in/user">Ewidencja Czasu pracy - user</Link>
+          </ul>
           <ul className="li"></ul>
         </>
       </Route>
 
       <Route exact path="/demo/clock-in/admin">
         <>
-          <DemoTabs currentActive={1} />
+          <DemoTabs currentActive={6} />
           <DEMO_ADMINClockInAdminPage />
+        </>
+      </Route>
+      <Route exact path="/demo/clock-in/user">
+        <>
+          <DemoTabs currentActive={1} />
+          <DEMO_User_ClockInMasterPage />
         </>
       </Route>
     </>

@@ -18,7 +18,7 @@ import {
   Sort,
   Toolbar,
 } from "@syncfusion/ej2-react-grids";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 interface IData {
@@ -75,7 +75,116 @@ const Component: React.FunctionComponent<IComponentProps> = (
   const [currentActive, setCurrentActive] = useState<CurrentActiveTab>(
     CurrentActiveTab.PENDINGREQUESTS
   );
-  const [dataHistory, setDataHistory] = useState<IDataHistory[]>([]);
+  const [dataHistory, setDataHistory] = useState<IDataHistory[]>([
+    {
+      clockInOutID: 1,
+      comment: "Wyszedłem z pracy szybciej i zapomniałem się odbić",
+      dateToChange: "19/11/2021",
+      entryTime: new Date(),
+      userName: "Jan Kowalski",
+      requestID: 123,
+      previousStartTime: "08:00:00",
+      newStartTime: "-",
+      previousEndTime: "19:00:00",
+      newEndTime: "15:00:00",
+      approvedBy: "Karol Kowalski",
+      approvedDate: new Date(),
+      status: "zatwierdzony",
+    },
+
+    {
+      clockInOutID: 1,
+      comment: "Lorem Ipsum",
+      dateToChange: "12/03/2021",
+      entryTime: new Date(),
+      userName: "Kamil Kowalski",
+      requestID: 123,
+      previousStartTime: "08:00:00",
+      newStartTime: "-",
+      previousEndTime: "15:00:00",
+      newEndTime: "16:00:00",
+      approvedBy: "Karol Kowalski",
+      approvedDate: new Date(),
+      status: "zatwierdzony",
+    },
+
+    {
+      clockInOutID: 1,
+      comment: "Lorem Ipsum",
+      dateToChange: "14/02/2021",
+      entryTime: new Date(),
+      userName: "Marcin Kowalski",
+      requestID: 123,
+      previousStartTime: "12:00:00",
+      newStartTime: "-",
+      previousEndTime: "17:30:00",
+      newEndTime: "15:00:00",
+      approvedBy: "Karol Kowalski",
+      approvedDate: new Date(),
+      status: "odrzucone",
+    },
+
+    {
+      clockInOutID: 1,
+      comment: "Lorem Ipsum",
+      dateToChange: "23/03/2021",
+      entryTime: new Date(),
+      userName: "Maja Kowalska",
+      requestID: 123,
+      previousStartTime: "07:30:22",
+      newStartTime: "-",
+      previousEndTime: "11:00:00",
+      newEndTime: "14:25:00",
+      approvedBy: "Karol Kowalski",
+      approvedDate: new Date(),
+      status: "zatwierdzony",
+    },
+    {
+      clockInOutID: 1,
+      comment: "Lorem Ipsum",
+      dateToChange: "11/01/2021",
+      entryTime: new Date(),
+      userName: "Marcin Kowalska",
+      requestID: 123,
+      previousStartTime: "09:30:22",
+      newStartTime: "-",
+      previousEndTime: "14:00:00",
+      newEndTime: "14:25:00",
+      approvedBy: "Maja Kowalski",
+      approvedDate: new Date(),
+      status: "zatwierdzony",
+    },
+    {
+      clockInOutID: 1,
+      comment: "Lorem Ipsum",
+      dateToChange: "04/04/2021",
+      entryTime: new Date(),
+      userName: "Kamila Kowalska",
+      requestID: 123,
+      previousStartTime: "11:30:00",
+      newStartTime: "-",
+      previousEndTime: "12:30:00",
+      newEndTime: "12:55:00",
+      approvedBy: "Karol Kowalski",
+      approvedDate: new Date(),
+      status: "zatwierdzony",
+    },
+    {
+      clockInOutID: 1,
+      comment: "Lorem Ipsum",
+      dateToChange: "14/03/2021",
+      entryTime: new Date(),
+      userName: "Maja Kowalska",
+      requestID: 123,
+      previousStartTime: "07:30:22",
+      newStartTime: "-",
+      previousEndTime: "11:00:00",
+      newEndTime: "14:25:00",
+      approvedBy: "Karol Kowalski",
+      approvedDate: new Date(),
+      status: "zatwierdzony",
+    },
+  ]);
   const [data, setData] = useState<IData[]>([
     {
       clockInOutID: 1,
@@ -100,151 +209,44 @@ const Component: React.FunctionComponent<IComponentProps> = (
     }
 
     if (props.currentStep === 17) {
-      setDataHistory([
-        {
-          clockInOutID: 1,
-          comment: "Wyszedłem z pracy szybciej i zapomniałem się odbić",
-          dateToChange: "19/11/2021",
-          entryTime: new Date(),
-          userName: "Jan Kowalski",
-          requestID: 123,
-          previousStartTime: "08:00:00",
-          newStartTime: "-",
-          previousEndTime: "19:00:00",
-          newEndTime: "15:00:00",
-          approvedBy: "Karol Kowalski",
-          approvedDate: new Date(),
-          status: "zatwierdzony",
-        },
-
-        {
-          clockInOutID: 1,
-          comment: "Lorem Ipsum",
-          dateToChange: "12/03/2021",
-          entryTime: new Date(),
-          userName: "Kamil Kowalski",
-          requestID: 123,
-          previousStartTime: "08:00:00",
-          newStartTime: "-",
-          previousEndTime: "15:00:00",
-          newEndTime: "16:00:00",
-          approvedBy: "Karol Kowalski",
-          approvedDate: new Date(),
-          status: "zatwierdzony",
-        },
-
-        {
-          clockInOutID: 1,
-          comment: "Lorem Ipsum",
-          dateToChange: "14/02/2021",
-          entryTime: new Date(),
-          userName: "Marcin Kowalski",
-          requestID: 123,
-          previousStartTime: "12:00:00",
-          newStartTime: "-",
-          previousEndTime: "17:30:00",
-          newEndTime: "15:00:00",
-          approvedBy: "Karol Kowalski",
-          approvedDate: new Date(),
-          status: "odrzucone",
-        },
-
-        {
-          clockInOutID: 1,
-          comment: "Lorem Ipsum",
-          dateToChange: "23/03/2021",
-          entryTime: new Date(),
-          userName: "Maja Kowalska",
-          requestID: 123,
-          previousStartTime: "07:30:22",
-          newStartTime: "-",
-          previousEndTime: "11:00:00",
-          newEndTime: "14:25:00",
-          approvedBy: "Karol Kowalski",
-          approvedDate: new Date(),
-          status: "zatwierdzony",
-        },
-        {
-          clockInOutID: 1,
-          comment: "Lorem Ipsum",
-          dateToChange: "11/01/2021",
-          entryTime: new Date(),
-          userName: "Marcin Kowalska",
-          requestID: 123,
-          previousStartTime: "09:30:22",
-          newStartTime: "-",
-          previousEndTime: "14:00:00",
-          newEndTime: "14:25:00",
-          approvedBy: "Maja Kowalski",
-          approvedDate: new Date(),
-          status: "zatwierdzony",
-        },
-        {
-          clockInOutID: 1,
-          comment: "Lorem Ipsum",
-          dateToChange: "04/04/2021",
-          entryTime: new Date(),
-          userName: "Kamila Kowalska",
-          requestID: 123,
-          previousStartTime: "11:30:00",
-          newStartTime: "-",
-          previousEndTime: "12:30:00",
-          newEndTime: "12:55:00",
-          approvedBy: "Karol Kowalski",
-          approvedDate: new Date(),
-          status: "zatwierdzony",
-        },
-        {
-          clockInOutID: 1,
-          comment: "Lorem Ipsum",
-          dateToChange: "14/03/2021",
-          entryTime: new Date(),
-          userName: "Maja Kowalska",
-          requestID: 123,
-          previousStartTime: "07:30:22",
-          newStartTime: "-",
-          previousEndTime: "11:00:00",
-          newEndTime: "14:25:00",
-          approvedBy: "Karol Kowalski",
-          approvedDate: new Date(),
-          status: "zatwierdzony",
-        },
-      ]);
     }
   }, [props.currentStep]);
+
+  const HandleTabClick = (tab: CurrentActiveTab) => {
+    return () => {
+      setCurrentActive(tab);
+    };
+  };
   return (
     <div className={props.className}>
       <div className="tabs is-centered">
         <ul>
-          {true && (
-            <li
-              className={` ${
-                currentActive == CurrentActiveTab.PENDINGREQUESTS
-                  ? "is-active"
-                  : ""
-              } `}
-            >
-              <a>
-                Oczekujące Akceptacji{" "}
-                {true && (
-                  <>
-                    <span className="badge-notification">1</span>
-                  </>
-                )}
-              </a>
-            </li>
-          )}
-          {true && (
-            <li
-              className={`ride-step14 ${
-                currentActive == CurrentActiveTab.REQUESTSHISTORY
-                  ? "is-active"
-                  : ""
-              } `}
-            >
-              <a>Historia Zmian</a>
-            </li>
-          )}
+          <li
+            onClick={HandleTabClick(CurrentActiveTab.PENDINGREQUESTS)}
+            className={` ${
+              currentActive == CurrentActiveTab.PENDINGREQUESTS
+                ? "is-active"
+                : ""
+            } `}
+          >
+            <a>
+              Oczekujące Akceptacji{" "}
+              <>
+                <span className="badge-notification">1</span>
+              </>
+            </a>
+          </li>
+
+          <li
+            onClick={HandleTabClick(CurrentActiveTab.REQUESTSHISTORY)}
+            className={`ride-step14 ${
+              currentActive == CurrentActiveTab.REQUESTSHISTORY
+                ? "is-active"
+                : ""
+            } `}
+          >
+            <a>Historia Zmian</a>
+          </li>
         </ul>
       </div>
 
@@ -272,8 +274,8 @@ const Component: React.FunctionComponent<IComponentProps> = (
             <br />
           </div>
 
-          {dataHistory.length > 0 && (
-            <div className="fadein ride-step17">
+          {true && (
+            <div className=" ride-step17">
               <GridComponent
                 dataSource={dataHistory}
                 filterSettings={filterSettings}
@@ -463,6 +465,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                             </td>
                             <td className="td decision-td ride-step12">
                               <button
+                                onClick={() => setData([])}
                                 className={`button is-success cancel-holiday-button 
                    
                           `}
@@ -472,6 +475,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                               </button>
 
                               <button
+                                onClick={() => setData([])}
                                 className={`button is-danger cancel-holiday-button `}
                               >
                                 Odrzuć
@@ -522,7 +526,7 @@ export const DEMO_WorkingHoursChangeAdmin = styled(Component)`
   .table {
     width: 95%;
     margin: 0 auto;
-
+    font-size: 1.6rem;
     .decision-td {
       display: grid;
       .button {

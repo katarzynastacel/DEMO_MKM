@@ -1,34 +1,11 @@
-import React, { useState, useContext, useEffect } from "react";
-import styled from "styled-components";
-
-import { Spinner } from "../../shared/spinner";
-
 import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
+import { Spinner } from "../../shared/spinner";
 
 interface IComponent {
   className?: string;
   currentStep: number;
-}
-
-interface ITableData {
-  id: number;
-  finishLocation: string;
-  startLocation: string;
-  user: string;
-  status: string;
-  totaWorkTime: string;
-  date: string;
-  workStartedAt: string;
-  workfinishedAt: string;
-  totalTimeOnBreak: string;
-  endOfTheDayComment: string;
-  startAccuracy: number;
-  endAccuracy: number;
-}
-
-interface IResponse {
-  data: ITableData[];
-  sumOfWorkingHours: number;
 }
 
 enum EmployeeStatus {
@@ -46,7 +23,7 @@ export enum LocationType {
 export const Component: React.FunctionComponent<IComponent> = (
   props: IComponent
 ) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
   const [modes] = useState<string[]>([
     "Ostatnie 7 dni",
     "Ostatnie 14 dni",
@@ -123,7 +100,7 @@ export const Component: React.FunctionComponent<IComponent> = (
   const getStatusTemplate = (value: string) => {
     switch (value) {
       case EmployeeStatus.FINISHED:
-        return <div className="clockin-filter-box2">Zakonczyl Prace</div>;
+        return <div className="clockin-filter-box2">Zakończył Prace</div>;
 
       case EmployeeStatus.IN_WORK:
         return <div className="clockin-filter-box3">Pracuje</div>;
@@ -221,18 +198,19 @@ export const Component: React.FunctionComponent<IComponent> = (
 
         {selectedUser != "" && (
           <button
+            onClick={() => setIsReady(true)}
             className={`fadein button is-medium is-primary confirm-button ride-step8 ${
               isLoading == true ? "is-loading" : ""
             } `}
           >
-            Wykonaj{" "}
+            Wykonaj
           </button>
         )}
       </div>
 
       {isLoading && <Spinner label="Przygotowywanie danych..." />}
 
-      {isReady && !isLoading && (
+      {isReady && (
         <div>
           <div className="filters fadein">
             <div className="clock-in-filter-text">
