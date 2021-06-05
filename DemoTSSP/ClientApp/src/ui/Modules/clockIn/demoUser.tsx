@@ -3,7 +3,7 @@ import Joyride, { ACTIONS, EVENTS, STATUS, Step } from "react-joyride";
 import styled from "styled-components";
 import { ClockInDemo } from "./user/clockInDemo";
 import { DemoMyClockInHistory } from "./user/clockinHistoryDemo";
-import { DemoMyClockInVsTimeSheetHours } from "./user/statsDemo";
+import { DemoMyClockInVsTimeSheetHours } from "../shared/statsDemo";
 /*import { SendMeEmail } from "../../../helper/sendMeInfoMessage"; */
 interface IComponent {
   className?: string;
@@ -772,7 +772,10 @@ const Component: React.FunctionComponent<IComponent> = (props: IComponent) => {
       <div>
         {currentActive == CurrentActiveTab.CLOCKIN && isUiVisible && (
           <>
-            <DemoMyClockInVsTimeSheetHours numberOfhours={78} />
+            <DemoMyClockInVsTimeSheetHours
+              currentActive="clockin"
+              numberOfhours={78}
+            />
             <ClockInDemo currentStepIndex={currentStep} />
           </>
         )}

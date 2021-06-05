@@ -12,6 +12,8 @@ const DEMO_User_ClockInMasterPage = lazy(
   () => import("./ui/Modules/clockIn/demoUser")
 );
 
+const DEMOUserTimeshet = lazy(() => import("./ui/Modules/timesheets/demoUser"));
+
 interface IAppProps {
   className?: string;
 }
@@ -20,18 +22,24 @@ export const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
   return (
     <>
       <Route exact path="/">
-        <>
-          <p>Witaj w demo mkm wybierz modul</p>
+        <div className="has-text-centered is-size-1">
+          <p>
+            <b>WITAJ DEMO MKM PROFESSIONALS!</b>
+          </p>
 
           <ul className="li">
-            <Link to="/demo/clock-in/admin">Ewidencja Czasu pracy - ADMIN</Link>
+            <Link to="/demo/clock-in/admin">Obecności online - ADMIN</Link>
           </ul>
 
           <ul className="li">
-            <Link to="/demo/clock-in/user">Ewidencja Czasu pracy - user</Link>
+            <Link to="/demo/clock-in/user">Obecności online - PRACOWNIK</Link>
           </ul>
-          <ul className="li"></ul>
-        </>
+          <ul className="li">
+            <Link to="/demo/timesheet/user">
+              Ewidencja Czasu pracy - PRACOWNIK
+            </Link>
+          </ul>
+        </div>
       </Route>
 
       <Route exact path="/demo/clock-in/admin">
@@ -44,6 +52,13 @@ export const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
         <>
           <DemoTabs currentActive={1} />
           <DEMO_User_ClockInMasterPage />
+        </>
+      </Route>
+
+      <Route exact path="/demo/timesheet/user">
+        <>
+          <DemoTabs currentActive={2} />
+          <DEMOUserTimeshet />
         </>
       </Route>
     </>

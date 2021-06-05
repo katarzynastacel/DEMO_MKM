@@ -14,7 +14,7 @@ export const DemoTabs: React.FunctionComponent<IComponent> = (
         <li className={props.currentActive === 1 ? "is-active" : ""}>
           <a>Obecność</a>
         </li>
-        <li>
+        <li className={props.currentActive === 2 ? "is-active" : ""}>
           <a>Godziny Pracy</a>
         </li>
         <li>

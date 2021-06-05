@@ -9,12 +9,13 @@ import {
   SeriesDirective,
   Tooltip,
 } from "@syncfusion/ej2-react-charts";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 
 interface IComponentProps {
   className?: string;
   numberOfhours: number;
+  currentActive: string;
 }
 interface IWorkedHours {
   userName: string;
@@ -24,10 +25,28 @@ interface IWorkedHours {
 const Component: React.FunctionComponent<IComponentProps> = (
   props: IComponentProps
 ) => {
-  const [clockInData] = useState<IWorkedHours[]>([
-    { userName: "Jan Kowalski", totalWorkedHours: props.numberOfhours },
-  ]);
-  const [timeSheetData] = useState<IWorkedHours[]>([]);
+  const [clockInData, setClockInData] = useState<IWorkedHours[]>([]);
+  const [timeSheetData, setTimeSheetData] = useState<IWorkedHours[]>([]);
+
+  useEffect(() => {
+    if (props.currentActive === "clockin") {
+      setClockInData([
+        {
+          userName: "Jan Kowalski",
+          totalWorkedHours: props.numberOfhours,
+        },
+      ]);
+    }
+
+    if (props.currentActive === "timesheet") {
+      setTimeSheetData([
+        {
+          userName: "Jan Kowalski",
+          totalWorkedHours: props.numberOfhours,
+        },
+      ]);
+    }
+  }, []);
 
   return (
     <div className={props.className}>
