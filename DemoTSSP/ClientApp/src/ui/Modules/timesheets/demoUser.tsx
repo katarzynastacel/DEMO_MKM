@@ -13,6 +13,12 @@ import { DemoTimeSheetComponent } from "./user/demoTimesheets";
 import { DropDownListComponent } from "@syncfusion/ej2-react-dropdowns";
 import Timer from "react-compound-timer";
 import { SendMeEmail } from "../../../helpers/sendMeInfoMessage";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+
 interface IComponentProps {
   className?: string;
   redirectToMKM: boolean;
@@ -25,6 +31,14 @@ enum CurrentActiveTab {
   MYTASKS = "MYTASKS",
 }
 
+interface ITimeLineData {
+  projectName: string;
+  activity: string;
+  startTime: string;
+  endTime: string;
+  total: string;
+}
+
 const Component: React.FunctionComponent<IComponentProps> = (
   props: IComponentProps
 ) => {
@@ -33,6 +47,38 @@ const Component: React.FunctionComponent<IComponentProps> = (
   );
   const [currentStep, setCurrentStep] = useState(1);
   const [runJoyRide, setRunJoyRide] = useState(false);
+  const [isTimeLineActive, setIsTimeLineActive] = useState(false);
+  const [timeLineData] = useState<ITimeLineData[]>([
+    {
+      projectName: "Projekt X - 1743",
+      activity: "Projektowanie",
+      startTime: "08:00:00",
+      endTime: "08:30:00",
+      total: "00:30:00",
+    },
+    {
+      projectName: "Projekt Y - 2243",
+      activity: "Autocad",
+      startTime: "08:30:37",
+      endTime: "10:32:00",
+      total: "02:32:37",
+    },
+    {
+      projectName: "Projekt Y - 2243",
+      activity: "Przerwa",
+      startTime: "10:32:00",
+      endTime: "11:00:00",
+      total: "00:28",
+    },
+    {
+      projectName: "Projekt Z",
+      activity: "Delegacja",
+      endTime: "17:30:00",
+      startTime: "11:00:00",
+      total: "06:30:00",
+    },
+  ]);
+
   const [steps] = useState<Step[]>([
     {
       target: ".ride-step14",
@@ -495,6 +541,63 @@ const Component: React.FunctionComponent<IComponentProps> = (
     };
   };
 
+  const getTemplate = (index: number, data: ITimeLineData) => {
+    if (index % 2) {
+      return (
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{
+            background: "#00d1b2",
+            color: "#fff",
+          }}
+          contentArrowStyle={{
+            borderRight: "#00d1b2",
+          }}
+          iconStyle={{ background: "#00d1b2", color: "#fff" }}
+          icon={<i className="fas fa-user-clock"></i>}
+        >
+          <h3 className="vertical-timeline-element-title">{data.activity}</h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            {data.projectName}
+          </h4>
+          <br />
+          <h5 className="vertical-timeline-element-title">
+            {data.startTime}- {data.endTime}
+            <br />
+            Czas Trwania: {data.total}
+          </h5>
+        </VerticalTimelineElement>
+      );
+    } else {
+      return (
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{
+            background: "rgb(33, 150, 243)",
+            color: "#fff",
+          }}
+          contentArrowStyle={{
+            borderRight: "7px solid  rgb(33, 150, 243)",
+          }}
+          iconStyle={{ background: "rgb(33, 150, 243)", color: "#fff" }}
+          icon={<i className="fas fa-user-clock"></i>}
+        >
+          <h3 className="vertical-timeline-element-title">{data.activity}</h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            {" "}
+            {data.projectName}
+          </h4>
+          <br />
+          <h4 className="vertical-timeline-element-title">
+            {data.startTime}- {data.endTime}
+            <br />
+            Czas Trwania: {data.total}
+          </h4>
+        </VerticalTimelineElement>
+      );
+    }
+  };
+
   const JourneyCallback = (data: any) => {
     const { action, index, status, type } = data;
     console.log(data);
@@ -700,7 +803,35 @@ const Component: React.FunctionComponent<IComponentProps> = (
 
             {currentStep >= 17 && (
               <div className="demo-tasks ride-step15">
-                <p className="is-size-2">
+                {isTimeLineActive && (
+                  <div className="modal is-active">
+                    <div className="modal-background"></div>
+                    <div className="modal-card">
+                      <button
+                        onClick={() => {
+                          setIsTimeLineActive(false);
+                        }}
+                        className="delete"
+                        aria-label="close"
+                      ></button>
+                      <section className="modal-card-body">
+                        <div>
+                          <VerticalTimeline animate={true}>
+                            {timeLineData.map((record, index) => {
+                              return getTemplate(index, record);
+                            })}
+                          </VerticalTimeline>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                )}
+                <p
+                  onClick={() => {
+                    setIsTimeLineActive(true);
+                  }}
+                  className="is-size-2"
+                >
                   <i className="fas fa-hourglass-half ride-step17"></i>
                 </p>
                 <br /> <br />
@@ -837,6 +968,20 @@ export const DEMOUserTimeshet = styled(Component)`
         color: #00d1b2;
       }
     }
+  }
+
+  .delete {
+    align-self: flex-end;
+    background: #00d1b2;
+  }
+  .modal-card-body {
+    position: relative;
+    background: #eee;
+  }
+
+  .modal-card {
+    width: 70%;
+    height: 80vh;
   }
 `;
 export default DEMOUserTimeshet;
