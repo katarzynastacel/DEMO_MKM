@@ -1,9 +1,9 @@
 import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 import { LivePanel } from "./admin/LivePanel";
-/* import { AdminTimesheetsGeneral } from "../components/admin/AdminGeneral";
+import { AdminTimesheetsGeneral } from "../timesheets/admin/mainTab";
 
-import {ActivityCalendar} from "../components/admin/activityCalendar" */
+import { ActivityCalendar } from "../timesheets/admin/activityCalendar";
 interface IComponentProps {
   className?: string;
 }
@@ -69,13 +69,13 @@ const Component: React.FunctionComponent<IComponentProps> = (
         </ul>
       </div>
       {currentActive === CurrentActiveTab.LIVEPANEL && <LivePanel />}
-      {/*       {currentActive === CurrentActiveTab.GENEREAL && (
+      {currentActive === CurrentActiveTab.GENEREAL && (
         <AdminTimesheetsGeneral />
       )}
-   
+
       {currentActive === CurrentActiveTab.ACTIVITY_CALENDAR && (
         <ActivityCalendar />
-      )} */}
+      )}
     </div>
   );
 };

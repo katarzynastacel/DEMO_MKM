@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@syncfusion/ej2-react-buttons": "^19.1.63",
+    "@syncfusion/ej2-react-schedule": "^19.1.66",
     "react-compound-timer": "^1.2.0"
   }
 }

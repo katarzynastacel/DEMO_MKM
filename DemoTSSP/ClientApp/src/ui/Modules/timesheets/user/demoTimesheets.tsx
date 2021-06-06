@@ -69,19 +69,19 @@ const Component: React.FunctionComponent<IComponent> = (props: IComponent) => {
           <tr>
             <td className="th">
               <DropDownListComponent
-                placeholder="Projekt 1"
                 showClearButton={false}
                 allowFiltering={true}
-                dataSource={[]}
+                dataSource={["Demo Project", "Demo Project 2"]}
+                value="Demo Project"
                 popupHeight="350px"
               />
             </td>
             <td className="th">
               <DropDownListComponent
-                placeholder="Projektowanie"
                 showClearButton={false}
                 allowFiltering={true}
-                dataSource={[]}
+                dataSource={["Delegacja", "Projektowanie", "Rysowanie autocad"]}
+                value="Projektowanie"
                 popupHeight="350px"
               />
             </td>
@@ -126,16 +126,17 @@ const Component: React.FunctionComponent<IComponent> = (props: IComponent) => {
                 placeholder="Projekt 2"
                 showClearButton={false}
                 allowFiltering={true}
-                dataSource={[]}
+                dataSource={["Demo Project", "Demo Project 2"]}
+                value="Demo Project 2"
                 popupHeight="350px"
               />
             </td>
             <td className="th">
               <DropDownListComponent
-                placeholder="Delegacja"
                 showClearButton={false}
                 allowFiltering={true}
-                dataSource={[]}
+                dataSource={["Delegacja", "Projektowanie", "Rysowanie autocad"]}
+                value="Delegacja"
                 popupHeight="350px"
               />
             </td>
