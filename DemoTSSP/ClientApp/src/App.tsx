@@ -4,6 +4,8 @@ import { Link, Route } from "react-router-dom";
 import "./custom.css";
 import { DemoTabs } from "./ui/Modules/shared/demoTabs";
 
+const AdminTimesheet = lazy(() => import("./ui/Modules/timesheets/demoAdmin"));
+
 const DEMO_ADMINClockInAdminPage = lazy(
   () => import("./ui/Modules/clockIn/demoAdmin")
 );
@@ -18,7 +20,6 @@ interface IAppProps {
   className?: string;
 }
 export const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
-  const [isLoading, setIsLoading] = useState(false);
   return (
     <>
       <Route exact path="/">
@@ -33,6 +34,11 @@ export const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
 
           <ul className="li">
             <Link to="/demo/clock-in/user">Obecności online - PRACOWNIK</Link>
+          </ul>
+          <ul className="li">
+            <Link to="/demo/timesheet/admin">
+              Ewidencja Czasu pracy - ADMIN
+            </Link>
           </ul>
           <ul className="li">
             <Link to="/demo/timesheet/user">
@@ -55,6 +61,12 @@ export const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
         </>
       </Route>
 
+      <Route exact path="/demo/timesheet/admin">
+        <>
+          <DemoTabs currentActive={7} />
+          <AdminTimesheet />
+        </>
+      </Route>
       <Route exact path="/demo/timesheet/user">
         <>
           <DemoTabs currentActive={2} />
