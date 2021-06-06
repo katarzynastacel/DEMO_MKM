@@ -25,11 +25,6 @@ export interface ITableData {
   endAccuracy: number;
 }
 
-interface IResponse {
-  data: ITableData[];
-  companyName: string;
-}
-
 enum EmployeeStatus {
   IN_WORK = "IN_WORK",
   FINISHED = "FINISHED",
@@ -45,7 +40,7 @@ export enum LocationType {
 export const Component: React.FunctionComponent<IComponent> = (
   props: IComponent
 ) => {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading] = useState(false);
   const [selectedLocation, setSelectedLocation] = useState<LocationType>();
   const [selectedRecord, setSelectedRecord] = useState<ITableData>();
   const [showLocationModal, setShowLocationModal] = useState(false);
@@ -218,7 +213,7 @@ export const Component: React.FunctionComponent<IComponent> = (
           endAccuracy: 50,
         },
       ]);
-    }, 11000);
+    }, 3000);
 
     setTimeout(() => {
       setData([
@@ -295,7 +290,7 @@ export const Component: React.FunctionComponent<IComponent> = (
           endAccuracy: 50,
         },
       ]);
-    }, 13000);
+    }, 5000);
     setTimeout(() => {
       setData([
         {
@@ -375,7 +370,7 @@ export const Component: React.FunctionComponent<IComponent> = (
           endAccuracy: 50,
         },
       ]);
-    }, 15000);
+    }, 7000);
 
     setTimeout(() => {
       setData([
@@ -462,7 +457,7 @@ export const Component: React.FunctionComponent<IComponent> = (
           endAccuracy: 50,
         },
       ]);
-    }, 16000);
+    }, 9000);
 
     setTimeout(() => {
       setData([
@@ -565,7 +560,7 @@ export const Component: React.FunctionComponent<IComponent> = (
           endAccuracy: 50,
         },
       ]);
-    }, 17000);
+    }, 10000);
 
     setTimeout(() => {
       setData([
@@ -651,7 +646,7 @@ export const Component: React.FunctionComponent<IComponent> = (
           endAccuracy: 50,
         },
       ]);
-    }, 19000);
+    }, 13000);
 
     setTimeout(() => {
       setData([
@@ -738,7 +733,7 @@ export const Component: React.FunctionComponent<IComponent> = (
           endAccuracy: 50,
         },
       ]);
-    }, 21000);
+    }, 17000);
   }, []);
 
   useEffect(() => {

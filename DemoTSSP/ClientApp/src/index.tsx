@@ -1,21 +1,20 @@
 import "bootstrap/dist/css/bootstrap.css";
 import React, { Suspense } from "react";
 import ReactDOM from "react-dom";
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
 import { App } from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import { Spinner } from "./ui/Modules/shared/spinner";
-const baseUrl = document.getElementsByTagName("base")[0].getAttribute("href");
+
 const rootElement = document.getElementById("root");
 
 ReactDOM.render(
   <>
-    <Suspense fallback={<Spinner label="MKM Professionals" />}>
+    <Suspense
+      fallback={
+        <Spinner label="MKM Professionals - Przygotowywanie danych do demo, prosimy o cierpliwość" />
+      }
+    >
       <Router>
         <Switch>
           <App />
