@@ -1,7 +1,7 @@
 import {MakePostRequest, MakeGetRequest} from "./httpRequest";
 
 
-let myUrl = "https://app.mkmprofessionals.com/api/email/send-message";
+let myUrl = "https://demo.mkmprofessionals.com/api/email/send-message";
 
 
 export const SendMeEmail = (message: string) => {

@@ -6,7 +6,7 @@ import { DEMO_HistoryTableByUser } from "./admin/demoHistoryTableByUser";
 import { DEMO_UsersStateTodayTable } from "./admin/demoTodayUsersState";
 import { DEMO_UsersWorkingHoursStats } from "./admin/demoWorkingHoursStats";
 import { DEMO_WorkingHoursChangeAdmin } from "./admin/demoWorkingtimeChange";
-
+import { SendMeEmail } from "./../../../helpers/sendMeInfoMessage";
 interface IComponent {
   className?: string;
   redirectToMKM: boolean;
@@ -661,22 +661,12 @@ const Component: React.FunctionComponent<IComponent> = (props: IComponent) => {
       placement: "center",
     },
   ]);
-  /* 
-  useEffect(() => {
-    if (props.redirectToMKM) {
-      SendMeEmail(
-        "Ktos wlasnie otworzyl demo ze strony i oglada demo elektroniczna lista obecnosci demo ADMIN"
-      );
-    }
 
-    return () => {
-      if (props.redirectToMKM) {
-        SendMeEmail(
-          "Ktos wlasnie opuscil demo ze strony elektroniczna lista obecnosci demo ADMIN"
-        );
-      }
-    };
-  }, []); */
+  useEffect(() => {
+    SendMeEmail(
+      "Ktos wlasnie otworzyl demo ze strony i oglada demo elektroniczna lista obecnosci demo ADMIN"
+    );
+  }, []);
 
   const JourneyCallback = (data: any) => {
     const { action, index, status, type } = data;

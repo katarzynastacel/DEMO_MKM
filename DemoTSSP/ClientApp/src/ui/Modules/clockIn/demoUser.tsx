@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Joyride, { ACTIONS, EVENTS, STATUS, Step } from "react-joyride";
 import styled from "styled-components";
 import { ClockInDemo } from "./user/clockInDemo";
 import { DemoMyClockInHistory } from "./user/clockinHistoryDemo";
 import { DemoMyClockInVsTimeSheetHours } from "../shared/statsDemo";
-/*import { SendMeEmail } from "../../../helper/sendMeInfoMessage"; */
+import { SendMeEmail } from "../../../helpers/sendMeInfoMessage";
 interface IComponent {
   className?: string;
   redirectToMKM: boolean;
@@ -538,21 +538,11 @@ const Component: React.FunctionComponent<IComponent> = (props: IComponent) => {
     },
   ]);
 
-  /*   useEffect(() => {
-    if (props.redirectToMKM) {
-      SendMeEmail(
-        "Ktos wlasnie otworzyl demo ze strony i oglada demo elektroniczna lista obecnosci demo uzytkownik"
-      );
-    }
-
-    return () => {
-      if (props.redirectToMKM) {
-        SendMeEmail(
-          "Ktos wlasnie opuscil demo ze strony elektroniczna lista obecnosci demo uzytkownik"
-        );
-      }
-    };
-  }, []); */
+  useEffect(() => {
+    SendMeEmail(
+      "Ktos wlasnie otworzyl demo ze strony i oglada demo elektroniczna lista obecnosci demo uzytkownik"
+    );
+  }, []);
 
   const HandleTabClick = (type: CurrentActiveTab) => {
     return () => {

@@ -479,20 +479,11 @@ const Component: React.FunctionComponent<IComponentProps> = (
   ]);
 
   useEffect(() => {
-    if (props.redirectToMKM) {
-      SendMeEmail(
-        "Ktos wlasnie otworzyl demo ze strony i oglada ewidencja czasu pracy demo ADMIN"
-      );
-    }
-
-    return () => {
-      if (props.redirectToMKM) {
-        SendMeEmail(
-          "Ktos wlasnie opuscil demo ze strony ewidencja czasu pracy demo ADMIN"
-        );
-      }
-    };
+    SendMeEmail(
+      "Ktos wlasnie otworzyl demo ze strony i oglada ewidencja czasu pracy demo user"
+    );
   }, []);
+
   const HandleTabClick = (type: CurrentActiveTab) => {
     return () => {
       setCurrentActive(type);

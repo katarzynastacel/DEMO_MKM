@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 import { LivePanel } from "./admin/LivePanel";
 import { AdminTimesheetsGeneral } from "../timesheets/admin/mainTab";
-
+import { SendMeEmail } from "../../../helpers/sendMeInfoMessage";
 import { ActivityCalendar } from "../timesheets/admin/activityCalendar";
 interface IComponentProps {
   className?: string;
@@ -20,7 +20,11 @@ const Component: React.FunctionComponent<IComponentProps> = (
   const [currentActive, setCurrentActive] = useState<CurrentActiveTab>(
     CurrentActiveTab.GENEREAL
   );
-
+  useEffect(() => {
+    SendMeEmail(
+      "Ktos wlasnie otworzyl demo ze strony i oglada ewidencja czasu pracy demo ADMIN"
+    );
+  }, []);
   const HandleTabClick = (type: CurrentActiveTab) => {
     return () => {
       setCurrentActive(type);
