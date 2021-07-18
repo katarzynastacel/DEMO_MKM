@@ -16,6 +16,10 @@ const DEMO_User_ClockInMasterPage = lazy(
 
 const DEMOUserTimeshet = lazy(() => import("./ui/Modules/timesheets/demoUser"));
 
+const ProductivityMasterPage = lazy(
+  () => import("./ui/Modules/ProductivityEye/masterPage")
+);
+
 interface IAppProps {
   className?: string;
 }
@@ -27,6 +31,12 @@ export const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
           <p>
             <b>WITAJ DEMO MKM PROFESSIONALS!</b>
           </p>
+
+          <ul className="li">
+            <Link to="/demo/mkm-eye">
+              💻 Monitorowanie komputera pracownika 🖱
+            </Link>
+          </ul>
 
           <ul className="li">
             <Link to="/demo/clock-in/admin">Obecności online - ADMIN</Link>
@@ -71,6 +81,12 @@ export const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
         <>
           <DemoTabs currentActive={2} />
           <DEMOUserTimeshet />
+        </>
+      </Route>
+      <Route exact path="/demo/mkm-eye">
+        <>
+          <DemoTabs currentActive={8} />
+          <ProductivityMasterPage />
         </>
       </Route>
     </>

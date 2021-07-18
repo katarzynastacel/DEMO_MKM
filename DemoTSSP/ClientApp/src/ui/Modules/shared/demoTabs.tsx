@@ -26,6 +26,10 @@ export const DemoTabs: React.FunctionComponent<IComponent> = (
         <li>
           <a>CRM</a>
         </li>
+        <li className={props.currentActive === 8 ? "is-active" : ""}>
+          <a>MKM EYE 👁</a>
+        </li>
+
         <li className={props.currentActive === 6 ? "is-active" : ""}>
           <a> Admin/Obecności</a>
         </li>
