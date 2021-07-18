@@ -567,6 +567,8 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 <th className="th">Produktywny Czas</th>
                 <th className="th">Nieproduktywny Czas</th>
                 <th className="th">Produktywnosc</th>
+                <th className="th"></th>
+               
               </thead>
               <tbody className="tbody">
                 {usersData.map((r, index) => {
