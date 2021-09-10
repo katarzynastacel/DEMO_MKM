@@ -1,52 +1,51 @@
-import React, { useContext, useState, useEffect } from "react";
-import styled from "styled-components";
-import { ProductivityClock } from "./elemetns/productivityClock";
-import productive from "../icons/productive.svg";
-import unproductive from "../icons/unproductive.svg";
-import notallowed from "../icons/notallowed.svg";
-import lock from "../icons/lock.svg";
-import Timer from "react-compound-timer";
-import {
-  ITop10Apps,
-  ITop10PopularWebsites,
-  IHeaderStatsResponse,
-} from "./reportDashboard";
-import {
-  GridComponent,
-  ColumnsDirective,
-  ColumnDirective,
-  Inject,
-  DetailRow,
-  Page,
-  Sort,
-  Edit,
-  Group,
-  Reorder,
-  Toolbar,
-  ColumnChooser,
-  Resize,
-  ColumnMenu,
-  FilterType,
-  PageSettingsModel,
-  Filter,
-  ExcelExport,
-  AggregateColumnDirective,
-  AggregateColumnsDirective,
-  AggregateDirective,
-  AggregatesDirective,
-} from "@syncfusion/ej2-react-grids";
 import { DatePickerComponent } from "@syncfusion/ej2-react-calendars";
 import {
   AccumulationChartComponent,
+  AccumulationDataLabel,
+  AccumulationLegend,
   AccumulationSeriesCollectionDirective,
   AccumulationSeriesDirective,
-  AccumulationLegend,
-  PieSeries,
   AccumulationTooltip,
-  IAccLoadedEventArgs,
-  AccumulationTheme,
-  AccumulationDataLabel,
+  Category,
+  ChartComponent,
+  Legend,
+  PieSeries,
+  SeriesCollectionDirective,
+  SeriesDirective,
+  StackingLineSeries,
+  Tooltip,
 } from "@syncfusion/ej2-react-charts";
+import {
+  ColumnChooser,
+  ColumnDirective,
+  ColumnMenu,
+  ColumnsDirective,
+  ExcelExport,
+  Filter,
+  GridComponent,
+  Group,
+  Inject,
+  Page,
+  PageSettingsModel,
+  Reorder,
+  Resize,
+  Sort,
+  Toolbar,
+} from "@syncfusion/ej2-react-grids";
+import moment from "moment";
+import React, { useState } from "react";
+import Timer from "react-compound-timer";
+import styled from "styled-components";
+import lock from "../icons/lock.svg";
+import notallowed from "../icons/notallowed.svg";
+import productive from "../icons/productive.svg";
+import unproductive from "../icons/unproductive.svg";
+import { ProductivityClock } from "./elemetns/productivityClock";
+import {
+  IHeaderStatsResponse,
+  ITop10Apps,
+  ITop10PopularWebsites,
+} from "./reportDashboard";
 
 interface IComponentProps {
   className?: string;
@@ -63,7 +62,7 @@ interface IReportData {
   socialMedias: ITop10PopularWebsites[];
 }
 
-interface UserHistoryData {
+export interface UserHistoryData {
   activity: string;
   category: string;
   time: string;
@@ -532,6 +531,135 @@ const Component: React.FunctionComponent<IComponentProps> = (
             >
               <b>Profil Demo Pracownika</b>
             </div>
+            <ChartComponent
+              id="charsgugugagasdasdts"
+              style={{ textAlign: "center" }}
+              height={"230"}
+              width={"100%"}
+              primaryXAxis={{
+                majorGridLines: { width: 0 },
+                minorGridLines: { width: 0 },
+                majorTickLines: { width: 0 },
+                minorTickLines: { width: 0 },
+                interval: 1,
+                lineStyle: { width: 0 },
+                valueType: "Category",
+              }}
+              primaryYAxis={{
+                lineStyle: { width: 0 },
+                minimum: 0,
+                maximum: 100,
+                interval: 20,
+                majorTickLines: { width: 0 },
+                majorGridLines: { width: 1 },
+                minorGridLines: { width: 1 },
+                minorTickLines: { width: 0 },
+                labelFormat: "{value}%",
+              }}
+              chartArea={{ border: { width: 0 } }}
+              title="Produktywność Ostatnie 14 Dni"
+              tooltip={{ enable: true }}
+            >
+              <Inject
+                services={[StackingLineSeries, Category, Legend, Tooltip]}
+              />
+              <SeriesCollectionDirective>
+                <SeriesDirective
+                  dataSource={[
+                    {
+                      date: moment(new Date())
+                        .add(-14, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 12,
+                    },
+                    {
+                      date: moment(new Date())
+                        .add(-13, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 24,
+                    },
+                    {
+                      date: moment(new Date())
+                        .add(-12, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 48,
+                    },
+                    {
+                      date: moment(new Date())
+                        .add(-11, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 68,
+                    },
+                    {
+                      date: moment(new Date())
+                        .add(-10, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 19,
+                    },
+                    {
+                      date: moment(new Date())
+                        .add(-9, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 50,
+                    },
+                    {
+                      date: moment(new Date())
+                        .add(-8, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 77,
+                    },
+                    {
+                      date: moment(new Date())
+                        .add(-7, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 80,
+                    },
+                    {
+                      date: moment(new Date())
+                        .add(-6, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 94,
+                    },
+                    {
+                      date: moment(new Date())
+                        .add(-5, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 95,
+                    },
+                    {
+                      date: moment(new Date())
+                        .add(-4, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 98,
+                    },
+                    {
+                      date: moment(new Date())
+                        .add(-3, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 95,
+                    },
+                    {
+                      date: moment(new Date())
+                        .add(-2, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 96,
+                    },
+                    {
+                      date: moment(new Date())
+                        .add(-1, "days")
+                        .format("DD_MM_YYYY"),
+                      productivity: 0,
+                    },
+                  ]}
+                  xName="date"
+                  yName="productivity"
+                  width={2}
+                  type="StackingLine"
+                  marker={{ visible: true }}
+                  dashArray="5,1"
+                ></SeriesDirective>
+              </SeriesCollectionDirective>
+            </ChartComponent>
             <div className="layout-container">
               <div className="header-stats-main">
                 <div className="header-stats">

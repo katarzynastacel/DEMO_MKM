@@ -2,8 +2,13 @@ import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 //@ts-ignore
 import socialMedia from "../icons/socialMedia.PNG";
+import { MonitoringSettings } from "./settingsMonitoring";
 interface IComponentProps {
   className?: string;
+}
+enum CurrentActiveTab {
+  PRODUCTIVITY_SETTING,
+  TRACKING_SETTINGS,
 }
 
 interface ISettingResponse {
@@ -35,10 +40,13 @@ const Component: React.FunctionComponent<IComponentProps> = (
     "PWZ Powiat Warszawski Zachodni",
   ]);
   const [badWebsites, setBadWebsites] = useState<string[]>([
-    "Facebook",
-    "Instagram",
+    "Praca dla geodety",
+
     "xxx",
   ]);
+  const [currentActive, setCurrentActive] = useState<CurrentActiveTab>(
+    CurrentActiveTab.PRODUCTIVITY_SETTING
+  );
 
   const HandleClick = () => {
     alert("Opcja dostępna będzie po zarejestrowaniu");
@@ -55,104 +63,176 @@ const Component: React.FunctionComponent<IComponentProps> = (
     );
   };
 
+  const HandleTabClick = (type: CurrentActiveTab) => {
+    return () => {
+      setCurrentActive(type);
+    };
+  };
+
   return (
     <div className={props.className}>
-      <p className="has-text-centered heading-info-text-primary">
-        Zdefiniuj produktywność
-      </p>
-
-      <div className="icons-container-header box">
-        <div className="image-container">
-          <img
-            alt="clock in image"
-            className="module-image"
-            src={socialMedia}
-          />
-        </div>
+      <div className="tabs is-centered">
+        <ul>
+          <li
+            onClick={HandleTabClick(CurrentActiveTab.PRODUCTIVITY_SETTING)}
+            className={` ${
+              currentActive == CurrentActiveTab.PRODUCTIVITY_SETTING
+                ? "is-active"
+                : ""
+            } `}
+          >
+            <a>Produktywność</a>
+          </li>
+          <li
+            onClick={HandleTabClick(CurrentActiveTab.TRACKING_SETTINGS)}
+            className={` ${
+              currentActive == CurrentActiveTab.TRACKING_SETTINGS
+                ? "is-active"
+                : ""
+            } `}
+          >
+            <a>Monitorowanie</a>
+          </li>
+        </ul>
       </div>
+      {currentActive === CurrentActiveTab.TRACKING_SETTINGS && (
+        <MonitoringSettings />
+      )}
 
-      <div className="settings-container">
-        <div className="box">
-          <p className="is-pulled-right">
-            <i className="fas fa-info"></i>
+      {currentActive === CurrentActiveTab.PRODUCTIVITY_SETTING && (
+        <>
+          <p className="has-text-centered heading-info-text-primary">
+            Zdefiniuj produktywność
           </p>
 
-          <p>
-            <b>Produktywne Aplikacje</b>
-          </p>
-          <br />
-          <div className="columns">
-            <div className="column is-11">
-              <input
-                placeholder="Excel, Skype, Word, Teams, AutoCad, Adobe, Slack"
-                className="input"
+          <div className="icons-container-header box">
+            <div className="image-container">
+              <img
+                alt="clock in image"
+                className="module-image"
+                src={socialMedia}
               />
             </div>
-            <div className="column is-1">
-              <button onClick={HandleClick} className="button is-info">
-                <i className="fas fa-plus"></i>
-              </button>
-            </div>
-          </div>
-          <div className="list-wrapper">
-            {productiveApps.map((r) => {
-              return ListViewTemplate(r, "productiveApps");
-            })}
-          </div>
-        </div>
-        <div className="box">
-          <p className="is-pulled-right">
-            <i className="fas fa-info"></i>
-          </p>
-          <p>
-            <b>Produktywne Strony</b>
-          </p>
-          <br />
-          <div className="columns">
-            <div className="column is-11">
-              <input
-                placeholder="Wikipedia, Gmail, Geoportal, Baza danych klientów"
-                className="input"
-              />
-            </div>
-            <div className="column is-1">
-              <button onClick={HandleClick} className="button is-info">
-                <i className="fas fa-plus"></i>
-              </button>
-            </div>
-          </div>
-          <div className="list-wrapper">
-            {productiveWebsites.map((r) => {
-              return ListViewTemplate(r, "productiveWebs");
-            })}
-          </div>
-        </div>
-        <div className="box">
-          <p className="is-pulled-right">
-            <i className="fas fa-info"></i>
-          </p>
-          <p>
-            <b>Zakazane Frazy</b>
-          </p>
-          <br />
-          <div className="columns">
-            <div className="column is-11">
-              <input placeholder="......." className="input" />
-            </div>
-            <div className="column is-1">
-              <button onClick={HandleClick} className="button is-info">
-                <i className="fas fa-plus"></i>
-              </button>
-            </div>
           </div>
 
-          <div className="list-wrapper">
-            {badWebsites.map((r) => {
-              return ListViewTemplate(r, "badWebs");
-            })}
+          <div className="settings-container">
+            <div className="box">
+              <p className="is-pulled-right">
+                <i className="fas fa-info"></i>
+              </p>
+
+              <p>
+                <b>Produktywne Aplikacje</b>
+              </p>
+              <br />
+              <div className="columns">
+                <div className="column is-11">
+                  <input
+                    placeholder="Excel, Skype, Word, Teams, AutoCad, Adobe, Slack"
+                    className="input"
+                  />
+                </div>
+                <div className="column is-1">
+                  <button onClick={HandleClick} className="button is-info">
+                    <i className="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div className="list-wrapper">
+                {productiveApps.map((r) => {
+                  return ListViewTemplate(r, "productiveApps");
+                })}
+              </div>
+            </div>
+            <div className="box">
+              <p className="is-pulled-right">
+                <i className="fas fa-info"></i>
+              </p>
+              <p>
+                <b>Produktywne Strony</b>
+              </p>
+              <br />
+              <div className="columns">
+                <div className="column is-11">
+                  <input
+                    placeholder="Wikipedia, Gmail, Geoportal, Baza danych klientów"
+                    className="input"
+                  />
+                </div>
+                <div className="column is-1">
+                  <button onClick={HandleClick} className="button is-info">
+                    <i className="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div className="list-wrapper">
+                {productiveWebsites.map((r) => {
+                  return ListViewTemplate(r, "productiveWebs");
+                })}
+              </div>
+            </div>
+            <div className="box">
+              <p className="is-pulled-right">
+                <i className="fas fa-info"></i>
+              </p>
+              <p>
+                <b>Social Media</b>
+              </p>
+              <br />
+              <div className="columns">
+                <div className="column is-11">
+                  <input
+                    placeholder="Facebook, Youtube, Avon, Pudelek, Onet"
+                    className="input"
+                  />
+                </div>
+                <div className="column is-1">
+                  <button className="button is-info">
+                    <i className="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+              <div className="list-wrapper">
+                {[
+                  "Facebook",
+                  "Interia",
+                  "Onet",
+                  "Pudelek",
+                  "Wirtualna Polska",
+                  "Instagram",
+                ].map((r) => {
+                  return ListViewTemplate(r, "socialMedia");
+                })}
+              </div>
+            </div>
+            <div className="box">
+              <p className="is-pulled-right">
+                <i className="fas fa-info"></i>
+              </p>
+              <p>
+                <b>Zakazane Frazy</b>
+              </p>
+              <br />
+              <div className="columns">
+                <div className="column is-11">
+                  <input placeholder="......." className="input" />
+                </div>
+                <div className="column is-1">
+                  <button onClick={HandleClick} className="button is-info">
+                    <i className="fas fa-plus"></i>
+                  </button>
+                </div>
+              </div>
+
+              <div className="list-wrapper">
+                {badWebsites.map((r) => {
+                  return ListViewTemplate(r, "badWebs");
+                })}
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
+        </>
+      )}
     </div>
   );
 };
@@ -223,5 +303,10 @@ export const SettingsComponent = styled(Component)`
     &:hover {
       background-color: lightgray;
     }
+  }
+
+  .is-info {
+    width: -webkit-fill-available;
+    min-width: 30px;
   }
 `;

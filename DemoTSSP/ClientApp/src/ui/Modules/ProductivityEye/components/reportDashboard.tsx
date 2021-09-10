@@ -22,7 +22,8 @@ import {
   AccumulationTheme,
   AccumulationDataLabel,
 } from "@syncfusion/ej2-react-charts";
-
+import { SocialMediaDetails, IReportMode } from "./socialMediaDetails";
+import { MouseKeyboardDetails } from "./mouseKeyboardDetails";
 interface IComponentProps {
   className?: string;
 }
@@ -76,7 +77,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
     3685
   );
   const [totalLockedScreenSeconds, setTotalLockedScreenSeconds] = useState<any>(
-    1954
+    1305
   );
   const [
     totalUnallowedWebsiteSeconds,
@@ -274,7 +275,658 @@ const Component: React.FunctionComponent<IComponentProps> = (
   const [selectedUser, setSelectedUser] = useState<IUserProductivityRecord>();
   const [availableReload, setAvailableReload] = useState(true);
   const [selectedDate, setSelectedDate] = useState(new Date());
+  const [modalTittleToRender, setModalTittleToRender] = useState("");
+  const [selectedReportMode, setSelectedReportMode] = useState<IReportMode>();
+  const [top10InactiveMouse, setTop10InactiveMouse] = useState<any[]>([
+    {
+      userName: "Maria Zielnik",
+      startTimeLabel: "07:40:09",
+      totalSeconds: 2300,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Maria Zielnik",
+      startTimeLabel: "12:21:09",
+      totalSeconds: 2111,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Marcin Bielik",
+      startTimeLabel: "14:22:11",
+      totalSeconds: 2100,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Karol Janas",
+      startTimeLabel: "15:22:56",
+      totalSeconds: 1824,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Jan Kowalski",
+      startTimeLabel: "13:12:50",
+      totalSeconds: 1799,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Marian Drabik",
+      startTimeLabel: "11:22:11",
+      totalSeconds: 1700,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Maria Zielnik",
+      startTimeLabel: "09:35:01",
+      totalSeconds: 1540,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+
+    {
+      userName: "Kamila Czernik",
+      startTimeLabel: "16:00:41",
+      totalSeconds: 1200,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Justyna Mach",
+      startTimeLabel: "12:00:09",
+      totalSeconds: 999,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+  ]);
+  const [top10InactiveKeyboard, setTop10InactiveKeyboard] = useState<any[]>([
+    {
+      userName: "Jan Kowalski",
+      startTimeLabel: "07:40:09",
+      totalSeconds: 3921,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Jan Kowalski",
+      startTimeLabel: "12:21:09",
+      totalSeconds: 3300,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Maria Zielnik",
+      startTimeLabel: "09:35:01",
+      totalSeconds: 2940,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Marcin Bielik",
+      startTimeLabel: "14:22:11",
+      totalSeconds: 2100,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Karol Janas",
+      startTimeLabel: "15:22:56",
+      totalSeconds: 1824,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Kamila Czernik",
+      startTimeLabel: "16:00:41",
+      totalSeconds: 1200,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Justyna Mach",
+      startTimeLabel: "12:00:09",
+      totalSeconds: 999,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Jan Kowalski",
+      startTimeLabel: "13:12:50",
+      totalSeconds: 754,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+    {
+      userName: "Marian Drabik",
+      startTimeLabel: "11:22:11",
+      totalSeconds: 360,
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+    },
+  ]);
+  const [mouseKeyboardActivity, setMouseKeyboardActivity] = useState<any[]>([
+    {
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+      userName: "Jan Kowalski",
+      mouseClickCounter: 12100,
+      keyboardClickCounter: 9121,
+      totalSecondsMouseIdle: 14308,
+      totalSecondsKeyboardIdle: 9834,
+      mouseIdleEvents: [
+        {
+          startTimeLabel: "05:44:20",
+          totalSeconds: 3272,
+        },
+        {
+          startTimeLabel: "06:38:52",
+          totalSeconds: 2900,
+        },
+        {
+          startTimeLabel: "07:59:15",
+          totalSeconds: 2605,
+        },
+        {
+          startTimeLabel: "09:48:27",
+          totalSeconds: 2155,
+        },
+        {
+          startTimeLabel: "10:24:34",
+          totalSeconds: 979,
+        },
+        {
+          startTimeLabel: "10:40:54",
+          totalSeconds: 659,
+        },
+        {
+          startTimeLabel: "10:51:59",
+          totalSeconds: 643,
+        },
+        {
+          startTimeLabel: "12:45:48",
+          totalSeconds: 500,
+        },
+        {
+          startTimeLabel: "14:03:29",
+          totalSeconds: 400,
+        },
+        {
+          startTimeLabel: "18:58:54",
+          totalSeconds: 195,
+        },
+      ],
+      keyboardIdleEvents: [
+        {
+          startTimeLabel: "12:45:49",
+          totalSeconds: 3771,
+        },
+        {
+          startTimeLabel: "13:48:42",
+          totalSeconds: 2100,
+        },
+        {
+          startTimeLabel: "09:28:46",
+          totalSeconds: 1400,
+        },
+        {
+          startTimeLabel: "08:54:46",
+          totalSeconds: 816,
+        },
+        {
+          startTimeLabel: "08:45:38",
+          totalSeconds: 548,
+        },
+
+        {
+          startTimeLabel: "09:08:23",
+          totalSeconds: 533,
+        },
+        {
+          startTimeLabel: "12:39:43",
+          totalSeconds: 365,
+        },
+        {
+          startTimeLabel: "09:17:17",
+          totalSeconds: 301,
+        },
+      ],
+    },
+    {
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+      userName: "	Maria Zielnik",
+      mouseClickCounter: 9200,
+      keyboardClickCounter: 7100,
+      totalSecondsMouseIdle: 2800,
+      totalSecondsKeyboardIdle: 2300,
+      mouseIdleEvents: [
+        {
+          startTimeLabel: "05:44:20",
+          totalSeconds: 3272,
+        },
+        {
+          startTimeLabel: "06:38:52",
+          totalSeconds: 4822,
+        },
+        {
+          startTimeLabel: "07:59:15",
+          totalSeconds: 2605,
+        },
+        {
+          startTimeLabel: "09:48:27",
+          totalSeconds: 2155,
+        },
+        {
+          startTimeLabel: "10:24:34",
+          totalSeconds: 979,
+        },
+        {
+          startTimeLabel: "10:40:54",
+          totalSeconds: 659,
+        },
+        {
+          startTimeLabel: "10:51:59",
+          totalSeconds: 6453,
+        },
+        {
+          startTimeLabel: "12:45:48",
+          totalSeconds: 3770,
+        },
+        {
+          startTimeLabel: "14:03:29",
+          totalSeconds: 17071,
+        },
+        {
+          startTimeLabel: "18:58:54",
+          totalSeconds: 6748,
+        },
+      ],
+      keyboardIdleEvents: [
+        {
+          startTimeLabel: "08:45:38",
+          totalSeconds: 548,
+        },
+        {
+          startTimeLabel: "08:54:46",
+          totalSeconds: 816,
+        },
+        {
+          startTimeLabel: "09:08:23",
+          totalSeconds: 533,
+        },
+        {
+          startTimeLabel: "09:17:17",
+          totalSeconds: 301,
+        },
+        {
+          startTimeLabel: "09:28:46",
+          totalSeconds: 11448,
+        },
+        {
+          startTimeLabel: "12:39:43",
+          totalSeconds: 365,
+        },
+        {
+          startTimeLabel: "12:45:49",
+          totalSeconds: 3771,
+        },
+        {
+          startTimeLabel: "13:48:42",
+          totalSeconds: 18076,
+        },
+      ],
+    },
+    {
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+      userName: "Marcin Bielik",
+      mouseClickCounter: 8100,
+      keyboardClickCounter: 9300,
+      totalSecondsMouseIdle: 2433,
+      totalSecondsKeyboardIdle: 1120,
+      mouseIdleEvents: [
+        {
+          startTimeLabel: "05:44:20",
+          totalSeconds: 3272,
+        },
+        {
+          startTimeLabel: "06:38:52",
+          totalSeconds: 4822,
+        },
+        {
+          startTimeLabel: "07:59:15",
+          totalSeconds: 2605,
+        },
+        {
+          startTimeLabel: "09:48:27",
+          totalSeconds: 2155,
+        },
+        {
+          startTimeLabel: "10:24:34",
+          totalSeconds: 979,
+        },
+        {
+          startTimeLabel: "10:40:54",
+          totalSeconds: 659,
+        },
+        {
+          startTimeLabel: "10:51:59",
+          totalSeconds: 6453,
+        },
+        {
+          startTimeLabel: "12:45:48",
+          totalSeconds: 3770,
+        },
+        {
+          startTimeLabel: "14:03:29",
+          totalSeconds: 17071,
+        },
+        {
+          startTimeLabel: "18:58:54",
+          totalSeconds: 6748,
+        },
+      ],
+      keyboardIdleEvents: [
+        {
+          startTimeLabel: "08:45:38",
+          totalSeconds: 548,
+        },
+        {
+          startTimeLabel: "08:54:46",
+          totalSeconds: 816,
+        },
+        {
+          startTimeLabel: "09:08:23",
+          totalSeconds: 533,
+        },
+        {
+          startTimeLabel: "09:17:17",
+          totalSeconds: 301,
+        },
+        {
+          startTimeLabel: "09:28:46",
+          totalSeconds: 11448,
+        },
+        {
+          startTimeLabel: "12:39:43",
+          totalSeconds: 365,
+        },
+        {
+          startTimeLabel: "12:45:49",
+          totalSeconds: 3771,
+        },
+        {
+          startTimeLabel: "13:48:42",
+          totalSeconds: 18076,
+        },
+      ],
+    },
+    {
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+      userName: "Karol Janas",
+      mouseClickCounter: 7000,
+      keyboardClickCounter: 11002,
+      totalSecondsMouseIdle: 1900,
+      totalSecondsKeyboardIdle: 2100,
+      mouseIdleEvents: [
+        {
+          startTimeLabel: "05:44:20",
+          totalSeconds: 3272,
+        },
+        {
+          startTimeLabel: "06:38:52",
+          totalSeconds: 4822,
+        },
+        {
+          startTimeLabel: "07:59:15",
+          totalSeconds: 2605,
+        },
+        {
+          startTimeLabel: "09:48:27",
+          totalSeconds: 2155,
+        },
+        {
+          startTimeLabel: "10:24:34",
+          totalSeconds: 979,
+        },
+        {
+          startTimeLabel: "10:40:54",
+          totalSeconds: 659,
+        },
+        {
+          startTimeLabel: "10:51:59",
+          totalSeconds: 6453,
+        },
+        {
+          startTimeLabel: "12:45:48",
+          totalSeconds: 3770,
+        },
+        {
+          startTimeLabel: "14:03:29",
+          totalSeconds: 17071,
+        },
+        {
+          startTimeLabel: "18:58:54",
+          totalSeconds: 6748,
+        },
+      ],
+      keyboardIdleEvents: [
+        {
+          startTimeLabel: "08:45:38",
+          totalSeconds: 548,
+        },
+        {
+          startTimeLabel: "08:54:46",
+          totalSeconds: 816,
+        },
+        {
+          startTimeLabel: "09:08:23",
+          totalSeconds: 533,
+        },
+        {
+          startTimeLabel: "09:17:17",
+          totalSeconds: 301,
+        },
+        {
+          startTimeLabel: "09:28:46",
+          totalSeconds: 11448,
+        },
+        {
+          startTimeLabel: "12:39:43",
+          totalSeconds: 365,
+        },
+        {
+          startTimeLabel: "12:45:49",
+          totalSeconds: 3771,
+        },
+        {
+          startTimeLabel: "13:48:42",
+          totalSeconds: 18076,
+        },
+      ],
+    },
+    {
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+      userName: "	Justyna Mach",
+      mouseClickCounter: 5405,
+      keyboardClickCounter: 7657,
+      totalSecondsMouseIdle: 2900,
+      totalSecondsKeyboardIdle: 1100,
+      mouseIdleEvents: [
+        {
+          startTimeLabel: "05:44:20",
+          totalSeconds: 3272,
+        },
+        {
+          startTimeLabel: "06:38:52",
+          totalSeconds: 4822,
+        },
+        {
+          startTimeLabel: "07:59:15",
+          totalSeconds: 2605,
+        },
+        {
+          startTimeLabel: "09:48:27",
+          totalSeconds: 2155,
+        },
+        {
+          startTimeLabel: "10:24:34",
+          totalSeconds: 979,
+        },
+        {
+          startTimeLabel: "10:40:54",
+          totalSeconds: 659,
+        },
+        {
+          startTimeLabel: "10:51:59",
+          totalSeconds: 6453,
+        },
+        {
+          startTimeLabel: "12:45:48",
+          totalSeconds: 3770,
+        },
+        {
+          startTimeLabel: "14:03:29",
+          totalSeconds: 17071,
+        },
+        {
+          startTimeLabel: "18:58:54",
+          totalSeconds: 6748,
+        },
+      ],
+      keyboardIdleEvents: [
+        {
+          startTimeLabel: "08:45:38",
+          totalSeconds: 548,
+        },
+        {
+          startTimeLabel: "08:54:46",
+          totalSeconds: 816,
+        },
+        {
+          startTimeLabel: "09:08:23",
+          totalSeconds: 533,
+        },
+        {
+          startTimeLabel: "09:17:17",
+          totalSeconds: 301,
+        },
+        {
+          startTimeLabel: "09:28:46",
+          totalSeconds: 11448,
+        },
+        {
+          startTimeLabel: "12:39:43",
+          totalSeconds: 365,
+        },
+        {
+          startTimeLabel: "12:45:49",
+          totalSeconds: 3771,
+        },
+        {
+          startTimeLabel: "13:48:42",
+          totalSeconds: 18076,
+        },
+      ],
+    },
+
+    {
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+      userName: "Marian Drabik",
+      mouseClickCounter: 3400,
+      keyboardClickCounter: 4357,
+      totalSecondsMouseIdle: 1095,
+      totalSecondsKeyboardIdle: 928,
+      mouseIdleEvents: [
+        {
+          startTimeLabel: "05:44:20",
+          totalSeconds: 3272,
+        },
+        {
+          startTimeLabel: "06:38:52",
+          totalSeconds: 4822,
+        },
+        {
+          startTimeLabel: "07:59:15",
+          totalSeconds: 2605,
+        },
+        {
+          startTimeLabel: "09:48:27",
+          totalSeconds: 2155,
+        },
+        {
+          startTimeLabel: "10:24:34",
+          totalSeconds: 979,
+        },
+        {
+          startTimeLabel: "10:40:54",
+          totalSeconds: 659,
+        },
+        {
+          startTimeLabel: "10:51:59",
+          totalSeconds: 6453,
+        },
+        {
+          startTimeLabel: "12:45:48",
+          totalSeconds: 3770,
+        },
+        {
+          startTimeLabel: "14:03:29",
+          totalSeconds: 17071,
+        },
+        {
+          startTimeLabel: "18:58:54",
+          totalSeconds: 6748,
+        },
+      ],
+      keyboardIdleEvents: [
+        {
+          startTimeLabel: "08:45:38",
+          totalSeconds: 548,
+        },
+        {
+          startTimeLabel: "08:54:46",
+          totalSeconds: 816,
+        },
+        {
+          startTimeLabel: "09:08:23",
+          totalSeconds: 533,
+        },
+        {
+          startTimeLabel: "09:17:17",
+          totalSeconds: 301,
+        },
+        {
+          startTimeLabel: "09:28:46",
+          totalSeconds: 11448,
+        },
+        {
+          startTimeLabel: "12:39:43",
+          totalSeconds: 365,
+        },
+        {
+          startTimeLabel: "12:45:49",
+          totalSeconds: 3771,
+        },
+        {
+          startTimeLabel: "13:48:42",
+          totalSeconds: 18076,
+        },
+      ],
+    },
+  ]);
+  const [
+    recordForMouseKeyboardActiviy,
+    setRecordForMouseKeyboardActiviy,
+  ] = useState<any>();
   let interval: any;
+
+  const HandleUnallowedAppsClick = () => {
+    setModalTittleToRender("Czas W Zakazanych");
+    setSelectedReportMode(IReportMode.UnallowedWebsites);
+  };
+
+  const HandleLockedScreenClick = () => {
+    setModalTittleToRender("Zablokowany Ekran");
+    setSelectedReportMode(IReportMode.LockedScreen);
+  };
+
+  const handleShowKeyboardMouseActivity = (mkmID: string) => {
+    return () => {
+      let record = mouseKeyboardActivity.find((x) => x.mkmID === mkmID);
+
+      if (record) {
+        setRecordForMouseKeyboardActiviy(record);
+      }
+    };
+  };
+
+  const handleCloseKeyboardMouseActivity = () => {
+    setRecordForMouseKeyboardActiviy(undefined);
+  };
 
   const getProductivityTemplate = (value: number) => {
     let color = "is-success";
@@ -298,6 +950,26 @@ const Component: React.FunctionComponent<IComponentProps> = (
             max="100"
           ></progress>
         </p>
+      </div>
+    );
+  };
+
+  const getKeyboardTemplate = (keyboardClicks: number) => {
+    return (
+      <div className="control">
+        <div className="tags has-addons">
+          <span className="tag is-dark">{keyboardClicks}</span>
+        </div>
+      </div>
+    );
+  };
+
+  const getMouseTemplate = (mouseClick: number) => {
+    return (
+      <div className="control">
+        <div className="tags has-addons">
+          <span className="tag is-dark">{mouseClick}</span>
+        </div>
       </div>
     );
   };
@@ -347,6 +1019,17 @@ const Component: React.FunctionComponent<IComponentProps> = (
     setSelectedUser(undefined);
   };
 
+  const OnShowSocialMediaInfoModalClose = () => {
+    setSelectedReportMode(undefined);
+    setModalTittleToRender("");
+  };
+
+  const HandleShowSocialMediaDetails = (modalTittle: string) => {
+    return () => {
+      setSelectedReportMode(IReportMode.SocialMedia);
+      setModalTittleToRender(modalTittle);
+    };
+  };
   return (
     <div className={props.className}>
       {selectedUser && (
@@ -355,6 +1038,25 @@ const Component: React.FunctionComponent<IComponentProps> = (
           mkmID={selectedUser.mkmID}
           onClose={handleUserModalClose}
           userName={selectedUser.name}
+        />
+      )}
+
+      {recordForMouseKeyboardActiviy && (
+        <MouseKeyboardDetails
+          record={recordForMouseKeyboardActiviy}
+          onClose={handleCloseKeyboardMouseActivity}
+          average={{
+            averageMouse: 7534,
+            averageKeyboard: 7484,
+          }}
+        />
+      )}
+
+      {selectedReportMode && (
+        <SocialMediaDetails
+          reportMode={selectedReportMode}
+          name={modalTittleToRender}
+          onClose={OnShowSocialMediaInfoModalClose}
         />
       )}
 
@@ -406,9 +1108,13 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 </div>
               </div>
             </div>
-            <div className="header-stat-box box">
+            <div
+              onClick={HandleUnallowedAppsClick}
+              className="header-stat-box box tr-click-user"
+            >
               <p>Czas W Zakazanych</p>
               <div className="icon-time-container">
+                <button className="button is-info">Kliknij</button>
                 <div>
                   <img
                     width="100px"
@@ -474,9 +1180,13 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 </div>
               </div>
             </div>
-            <div className="header-stat-box box">
+            <div
+              onClick={HandleLockedScreenClick}
+              className="header-stat-box box tr-click-user"
+            >
               <p>Zablokowany Ekran</p>
               <div className="icon-time-container">
+                <button className="button is-info">Kliknij</button>
                 <div>
                   <img
                     width="100px"
@@ -568,7 +1278,6 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 <th className="th">Nieproduktywny Czas</th>
                 <th className="th">Produktywnosc</th>
                 <th className="th"></th>
-               
               </thead>
               <tbody className="tbody">
                 {usersData.map((r, index) => {
@@ -637,16 +1346,20 @@ const Component: React.FunctionComponent<IComponentProps> = (
             </p>
             <hr />
 
-            <table className="table is-fullwidth is-striped">
+            <table className="table is-fullwidth is-striped is-hoverable">
               <thead className="head">
                 <th className="th">Miejsce</th>
                 <th className="th">Strona</th>
                 <th className="th">Czas</th>
+                <th className="th"></th>
               </thead>
               <tbody className="tbody">
                 {top10PopularWebsites.map((r, index) => {
                   return (
-                    <tr className="tr">
+                    <tr
+                      onClick={HandleShowSocialMediaDetails(r.name)}
+                      className="tr tr-click-user"
+                    >
                       <td className="td">
                         <b>{index + 1}</b>
                       </td>
@@ -670,6 +1383,9 @@ const Component: React.FunctionComponent<IComponentProps> = (
                             </span>
                           )}
                         </div>
+                      </td>
+                      <td className="td">
+                        <button className="button is-info">Kliknij</button>
                       </td>
                     </tr>
                   );
@@ -744,12 +1460,13 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 <th className="th">Pracownik</th>
 
                 <th className="th">Spędzony Czas</th>
+                <th className="th"></th>
               </thead>
               <tbody className="tbody">
                 {mostUsedSocialMedia.map((r, index) => {
                   return (
                     <tr
-                      //onClick={handleUserRecordClick(r)}
+                      onClick={HandleShowSocialMediaDetails(r.websiteName)}
                       className="tr tr-click-user"
                     >
                       <td className="td">{r.websiteName}</td>
@@ -774,6 +1491,9 @@ const Component: React.FunctionComponent<IComponentProps> = (
                             </span>
                           )}
                         </div>
+                      </td>
+                      <td className="td">
+                        <button className="button is-info">Kliknij</button>
                       </td>
                     </tr>
                   );
@@ -830,6 +1550,234 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 </AccumulationChartComponent>
               )}
             </div>
+          </div>
+        </div>
+
+        {/**** MOUSE & KEYBOARD */}
+        <div className="lower-stats-main">
+          <div className="lower-stat-side-panel box">
+            <div className="tags has-addons">
+              <span className="tag  is-large is-dark">
+                OGOLNA ŚREDNIA KLIKNIĘĆ KLAWIATURA
+                <i className="fas fa-keyboard add-margin"></i>
+              </span>
+              <span className="tag is-large is-primary">{7484}</span>
+            </div>
+            <hr />
+
+            <p className="lower-panel-header-text ">
+              <b>
+                NAJDŁUŻEJ Niekatywna Klawiatura
+                <i className="fas fa-keyboard"></i>
+              </b>
+            </p>
+            <hr />
+            <table className="table is-fullwidth is-striped">
+              <thead className="head">
+                <th></th>
+                <th className="th">Pracownik</th>
+                <th className="th">Godzina</th>
+                <th className="th">Nieaktywny Czas</th>
+                <th className="th"></th>
+              </thead>
+              <tbody className="tbody">
+                {top10InactiveKeyboard.map((r, index) => {
+                  return (
+                    <tr
+                      onClick={handleShowKeyboardMouseActivity(r.mkmID)}
+                      className="tr tr-click-user"
+                      key={index}
+                    >
+                      <td className="td">
+                        <b>{index + 1}</b>
+                      </td>
+                      <td className="td">{r.userName}</td>
+                      <td className="td">{r.startTimeLabel}</td>
+                      <td className="td">
+                        <div>
+                          {r.totalSeconds > 0 && (
+                            <span className="tag is-info is-light">
+                              {/*@ts-ignore}*/}
+                              <Timer
+                                formatValue={(value: any) =>
+                                  `${value < 10 ? `0${value}` : value}`
+                                }
+                                initialTime={r.totalSeconds * 1000}
+                                startImmediately={false}
+                              >
+                                <Timer.Hours />:
+                                <Timer.Minutes />:
+                                <Timer.Seconds />
+                              </Timer>
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                      <td className="td">
+                        <button className="button is-info">Kliknij</button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <div className="lower-stat-mid-panel box">
+            <div className="lower-panel-header-text has-text-centered ">
+              <div className="has-text-centered">
+                <b>STATYSTYKI AKTYWNOŚCI</b>
+              </div>
+            </div>
+            <hr />
+
+            <table className="table is-fullwidth">
+              <thead className="head">
+                <th className="th">Pracownik</th>
+                <th className="th">
+                  <i className="fas fa-keyboard"></i> Klikniecia
+                </th>
+                <th className="th">
+                  <i className="fas fa-keyboard"></i> Brak Aktywnosci
+                </th>
+                <th className="th">
+                  <i className="fas fa-mouse-pointer"></i> Klikniecia
+                </th>
+                <th className="th">
+                  <i className="fas fa-mouse-pointer"></i> Brak Aktywnosci
+                </th>
+                <th className="th"></th>
+              </thead>
+              <tbody className="tbody">
+                {mouseKeyboardActivity.map((r, index) => {
+                  return (
+                    <tr
+                      key={index}
+                      onClick={handleShowKeyboardMouseActivity(r.mkmID)}
+                      className="tr tr-click-user"
+                    >
+                      <td className="td">{r.userName}</td>
+                      <td className="td">
+                        {getKeyboardTemplate(r.keyboardClickCounter)}
+                      </td>
+                      <td className="td">
+                        <div>
+                          {r.totalSecondsKeyboardIdle > 0 && (
+                            <span className="tag is-light is-danger">
+                              {/*@ts-ignore}*/}
+
+                              <Timer
+                                formatValue={(value: any) =>
+                                  `${value < 10 ? `0${value}` : value}`
+                                }
+                                initialTime={r.totalSecondsKeyboardIdle * 1000}
+                                startImmediately={false}
+                              >
+                                <Timer.Hours />:
+                                <Timer.Minutes />:
+                                <Timer.Seconds />
+                              </Timer>
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                      <td className="td">
+                        {getMouseTemplate(r.mouseClickCounter)}
+                      </td>
+                      <td className="td">
+                        <div>
+                          {r.totalSecondsMouseIdle > 0 && (
+                            <span className="tag is-light is-danger">
+                              {/*@ts-ignore}*/}
+                              <Timer
+                                formatValue={(value: any) =>
+                                  `${value < 10 ? `0${value}` : value}`
+                                }
+                                initialTime={r.totalSecondsMouseIdle * 1000}
+                                startImmediately={false}
+                              >
+                                <Timer.Hours />:
+                                <Timer.Minutes />:
+                                <Timer.Seconds />
+                              </Timer>
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                      <td className="td">
+                        <button className="button is-info">Kliknij</button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
+          <div className="lower-stat-side-panel box">
+            <div className="tags has-addons">
+              <span className="tag  is-large is-dark">
+                OGOLNA ŚREDNIA KLIKNIĘĆ MYSZKA
+                <i className="fas fa-mouse-pointer add-margin"></i>
+              </span>
+              <span className="tag is-large is-primary">{7534}</span>
+            </div>
+            <hr />
+            <p className="lower-panel-header-text ">
+              <b>
+                NAJDŁUŻEJ NIEKATYWNA Myszka
+                <i className="fas fa-mouse-pointer"></i>
+              </b>
+            </p>
+            <hr />
+
+            <table className="table is-fullwidth is-striped">
+              <thead className="head">
+                <th></th>
+                <th className="th">Pracownik</th>
+                <th className="th">Godzina</th>
+                <th className="th">Nieaktywny Czas</th>
+                <th className="th"></th>
+              </thead>
+              <tbody className="tbody">
+                {top10InactiveMouse.map((r, index) => {
+                  return (
+                    <tr
+                      onClick={handleShowKeyboardMouseActivity(r.mkmID)}
+                      key={index}
+                      className="tr tr-click-user"
+                    >
+                      <td className="td">
+                        <b>{index + 1}</b>
+                      </td>
+                      <td className="td">{r.userName}</td>
+                      <td className="td">{r.startTimeLabel}</td>
+                      <td className="td">
+                        <div>
+                          {r.totalSeconds > 0 && (
+                            <span className="tag is-info is-light">
+                              {/*@ts-ignore}*/}
+                              <Timer
+                                formatValue={(value: any) =>
+                                  `${value < 10 ? `0${value}` : value}`
+                                }
+                                initialTime={r.totalSeconds * 1000}
+                                startImmediately={false}
+                              >
+                                <Timer.Hours />:
+                                <Timer.Minutes />:
+                                <Timer.Seconds />
+                              </Timer>
+                            </span>
+                          )}
+                        </div>
+                      </td>
+                      <td className="td">
+                        <button className="button is-info">Kliknij</button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -930,5 +1878,16 @@ export const ReportDashboard = styled(Component)`
 
   .box {
     min-width: 250px;
+  }
+
+  .add-margin {
+    margin: 5px;
+  }
+
+  .tag {
+    font-size: 1.2rem !important;
+  }
+  .fa-mouse-pointer {
+    margin-left: 10px !important;
   }
 `;

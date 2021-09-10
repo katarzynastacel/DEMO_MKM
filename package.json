@@ -3,6 +3,7 @@
     "@syncfusion/ej2-react-buttons": "^19.1.63",
     "@syncfusion/ej2-react-circulargauge": "^19.2.47",
     "@syncfusion/ej2-react-schedule": "^19.1.66",
+    "moment": "^2.29.1",
     "react-compound-timer": "^1.2.0"
   }
 }
