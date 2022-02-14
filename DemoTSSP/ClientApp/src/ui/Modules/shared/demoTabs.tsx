@@ -11,45 +11,8 @@ export const DemoTabs: React.FunctionComponent<IComponent> = (
   return (
     <div className="tabs is-centered">
       <ul>
-        <li className={props.currentActive === 1 ? "is-active" : ""}>
-          <a>Obecność</a>
-        </li>
-        <li className={props.currentActive === 2 ? "is-active" : ""}>
-          <a>Godziny Pracy</a>
-        </li>
-        <li>
-          <a>Koszty</a>
-        </li>
-        <li>
-          <a>Urlop</a>
-        </li>
-        <li>
-          <a>CRM</a>
-        </li>
         <li className={props.currentActive === 8 ? "is-active" : ""}>
-          <a>MKM EYE 👁</a>
-        </li>
-
-        <li className={props.currentActive === 6 ? "is-active" : ""}>
-          <a> Admin/Obecności</a>
-        </li>
-        <li className={props.currentActive === 7 ? "is-active" : ""}>
-          <a>Admin/Godziny Pracy</a>
-        </li>
-        <li>
-          <a>Admin/Koszty</a>
-        </li>
-        <li>
-          <a> Admin/Urlopy</a>
-        </li>
-        <li>
-          <a>Admin/CRM </a>
-        </li>
-        <li>
-          <a>Ustawienia</a>
-        </li>
-        <li>
-          <a> Płatności</a>
+          <a>Darmowe 14 dni 👁</a>
         </li>
       </ul>
     </div>
