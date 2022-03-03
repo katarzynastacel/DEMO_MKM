@@ -662,11 +662,11 @@ const Component: React.FunctionComponent<IComponent> = (props: IComponent) => {
     },
   ]);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     SendMeEmail(
       "Ktos wlasnie otworzyl demo ze strony i oglada demo elektroniczna lista obecnosci demo ADMIN"
     );
-  }, []);
+  }, []); */
 
   const JourneyCallback = (data: any) => {
     const { action, index, status, type } = data;

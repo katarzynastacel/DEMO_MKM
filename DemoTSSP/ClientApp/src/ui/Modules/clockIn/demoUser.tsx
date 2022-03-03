@@ -538,11 +538,11 @@ const Component: React.FunctionComponent<IComponent> = (props: IComponent) => {
     },
   ]);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     SendMeEmail(
       "Ktos wlasnie otworzyl demo ze strony i oglada demo elektroniczna lista obecnosci demo uzytkownik"
     );
-  }, []);
+  }, []); */
 
   const HandleTabClick = (type: CurrentActiveTab) => {
     return () => {

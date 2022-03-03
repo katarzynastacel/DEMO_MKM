@@ -41,9 +41,9 @@ const Component: React.FunctionComponent<IComponentProps> = (
     CurrentActiveTab.REPORT
   );
 
-  useEffect(() => {
+  /*   useEffect(() => {
     SendMeEmail("Ktos wlasnie otworzyl demo Kontrola komputera pracownika");
-  }, []);
+  }, []); */
 
   const HandleTabClick = (type: CurrentActiveTab) => {
     return () => {

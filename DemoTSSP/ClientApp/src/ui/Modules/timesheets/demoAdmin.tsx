@@ -20,11 +20,11 @@ const Component: React.FunctionComponent<IComponentProps> = (
   const [currentActive, setCurrentActive] = useState<CurrentActiveTab>(
     CurrentActiveTab.GENEREAL
   );
-  useEffect(() => {
+  /*   useEffect(() => {
     SendMeEmail(
       "Ktos wlasnie otworzyl demo ze strony i oglada ewidencja czasu pracy demo ADMIN"
     );
-  }, []);
+  }, []); */
   const HandleTabClick = (type: CurrentActiveTab) => {
     return () => {
       setCurrentActive(type);

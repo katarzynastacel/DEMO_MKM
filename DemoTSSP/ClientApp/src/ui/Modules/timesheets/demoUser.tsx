@@ -478,12 +478,12 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
   ]);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     SendMeEmail(
       "Ktos wlasnie otworzyl demo ze strony i oglada ewidencja czasu pracy demo user"
     );
   }, []);
-
+ */
   const HandleTabClick = (type: CurrentActiveTab) => {
     return () => {
       setCurrentActive(type);
