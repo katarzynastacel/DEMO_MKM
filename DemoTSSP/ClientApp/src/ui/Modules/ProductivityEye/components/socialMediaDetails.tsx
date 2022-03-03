@@ -451,15 +451,15 @@ const Component: React.FunctionComponent<IComponentProps> = (
 
                     <div className="box">
                       <p className="lower-panel-header-text">
-                        <b>Lista Pracowników</b>
+                        <b>Employee List</b>
                       </p>
                       <hr />
 
                       <table className="table is-fullwidth is-striped">
                         <thead className="thead">
-                          <th className="th">Miejsce</th>
-                          <th className="th">Pracownik</th>
-                          <th className="th">Czas</th>
+                          <th className="th">Position</th>
+                          <th className="th">Employee</th>
+                          <th className="th">Duration</th>
                         </thead>
                         <tbody className="tbody">
                           {usersOnMedia.map((r, index) => {
