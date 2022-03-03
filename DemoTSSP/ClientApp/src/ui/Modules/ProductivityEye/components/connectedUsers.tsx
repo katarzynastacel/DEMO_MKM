@@ -52,32 +52,32 @@ let gridInstance: any;
 
 let data: any = [
   {
-    activeApp: "chrome - Platforma do zarządzania firmą online - Google Chrome",
+    activeApp: "chrome - bbc weather- Google Chrome",
     companyName: "MKM PROFESSIONALS",
     id: 7,
     machineName: "LAPTOP-NHNTSMAK",
     machineUserName: "Laptop173",
     myIP: "192.112.7.80",
-    spoffedName: "Dział IT",
+    spoffedName: "IT",
     status: "ONLINE",
     time: getTimeFromDate(),
     uniqueID: "fbf4fe192.168.0.60_7-2b22-499c-9",
-    userName: "Jan Kowalski",
+    userName: "John Smith",
   },
 
   {
     activeApp:
-      "chrome - Zenek Martyniuk (Akcent) - Przez Twe Oczy Zielone - YouTube",
+      "chrome - Christina Perri - A Thousand Years [Official Music Video] - YouTube",
     companyName: "MKM PROFESSIONALS",
     id: 7,
     machineName: "LAPTOP-SPOTI",
     machineUserName: "Laptop12",
     myIP: "192.178.0.60",
-    spoffedName: "Dział IT",
+    spoffedName: "IT",
     status: "ONLINE",
     time: getTimeFromDate(),
     uniqueID: "fbf4fe192.168.0.60_7-2b22-499c-9",
-    userName: "Karol Kowalski",
+    userName: "James Jones ",
   },
 
   {
@@ -87,11 +87,11 @@ let data: any = [
     machineName: "LAPTOP-SPOTI",
     machineUserName: "Laptop07",
     myIP: "192.179.0.61",
-    spoffedName: "Dział HR",
+    spoffedName: "HR",
     status: "ONLINE",
     time: getTimeFromDate(),
     uniqueID: "fbf4fe192.168.0.60_7-2b22-499c-9",
-    userName: "Maria Kowalska",
+    userName: "William Taylor",
   },
 
   {
@@ -101,24 +101,24 @@ let data: any = [
     machineName: "LAPTOP-SPOTI",
     machineUserName: "Laptop10",
     myIP: "192.179.0.30",
-    spoffedName: "Dział HR",
+    spoffedName: "HR",
     status: "OFFLINE",
     time: getTimeFromDate(),
     uniqueID: "fbf4fe192.168.0.60_7-2b22-499c-9",
-    userName: "Justyna Kowalska",
+    userName: "Richard Brown",
   },
   {
-    activeApp: "EXCEL - Raport - MKM Professionals (3) - Excel",
+    activeApp: "EXCEL - Report - Sales Data (3) - Excel",
     companyName: "MKM PROFESSIONALS",
     id: 7,
     machineName: "LAPTOP-SPOTI",
     machineUserName: "Laptop09",
     myIP: "192.179.0.61",
-    spoffedName: "Dział Projektanci",
+    spoffedName: "Sales",
     status: "ONLINE",
     time: getTimeFromDate(),
     uniqueID: "fbf4fe192.168.0.60_7-2b22-499c-9",
-    userName: "Karolina Kowalska",
+    userName: "Sarah Williams",
   },
   {
     activeApp:
@@ -128,11 +128,11 @@ let data: any = [
     machineName: "LAPTOP-SPOTI",
     machineUserName: "Laptop67",
     myIP: "192.199.0.01",
-    spoffedName: "Manager",
+    spoffedName: "IT",
     status: "ONLINE",
     time: getTimeFromDate(),
     uniqueID: "fbf4fe192.168.0.60_7-2b22-499c-9",
-    userName: "Kamil Kowalski",
+    userName: "Margaret Wilson",
   },
 ];
 
@@ -214,28 +214,11 @@ const Component: React.FunctionComponent<IComponentProps> = (
   };
 
   const HandleClick = () => {
-    alert("Opcja dostępna będzie po zarejestrowaniu");
+    alert("Registration Required");
   };
 
   return (
     <div className={props.className}>
-      <div className="options-container">
-        {true && (
-          <button onClick={HandleClick} className="button is-info ">
-            <i className="fas fa-wifi"></i> Connection reset{" "}
-            <i className="fas fa-wifi"></i>
-          </button>
-        )}
-        <br />
-
-        <div>
-          <label className="label">
-            <i className="fas fa-sync-alt"></i>{" "}
-            {`Sychronizacja co ${refreshRate / 1000} sekund `}
-          </label>
-        </div>
-      </div>
-
       <GridComponent
         dataSource={activeComputers}
         filterSettings={filterSettings}
@@ -268,14 +251,14 @@ const Component: React.FunctionComponent<IComponentProps> = (
           <ColumnDirective
             field="userName"
             allowEditing={true}
-            headerText="Pracownik"
+            headerText="Employee"
             width="110"
           />
 
           <ColumnDirective
             field="spoffedName"
             allowEditing={true}
-            headerText="Twoja Nazwa"
+            headerText="Department"
             width="110"
           />
 
@@ -290,7 +273,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
             field="activeApp"
             allowEditing={false}
             template={ActivityTemplate}
-            headerText="Aktywność Teraz"
+            headerText="Latest Activity"
             width="350"
           />
 
@@ -302,14 +285,14 @@ const Component: React.FunctionComponent<IComponentProps> = (
           />
           <ColumnDirective
             field="machineName"
-            headerText="Nazwa Urzadzenia"
+            headerText="Computer Name"
             allowEditing={false}
             width="112"
           />
           <ColumnDirective
             field="machineUserName"
             allowEditing={false}
-            headerText="Nazwa Uzytkownika"
+            headerText="User Name"
             width="112"
           />
         </ColumnsDirective>

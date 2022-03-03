@@ -86,21 +86,21 @@ const Component: React.FunctionComponent<IComponentProps> = (
   const [usersData, setUsersData] = useState<IUserProductivityRecord[]>([
     {
       overallProductivity: 91,
-      name: "Kasia Minor",
+      name: "John Smith",
       totalUnproductiveSeconds: 1510,
       totalProductiveSeconds: 27300,
       mkmID: "ec1926192.168.0.60_5-dd75-46a7-8",
     },
     {
       overallProductivity: 88,
-      name: "Jan Kowalski",
+      name: "Sarah Williams",
       totalUnproductiveSeconds: 3616,
       totalProductiveSeconds: 32965,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
       overallProductivity: 83,
-      name: "Karol Bachaj",
+      name: "James Jones",
       totalUnproductiveSeconds: 2010,
       totalProductiveSeconds: 20320,
       mkmID: "ec1926192.168.0.60_5-dd75-46a7-8",
@@ -108,7 +108,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
 
     {
       overallProductivity: 49,
-      name: "Maria Treben",
+      name: "William Taylor",
       totalUnproductiveSeconds: 7900,
       totalProductiveSeconds: 15600,
       mkmID: "ec1926192.168.0.60_5-dd75-46a7-8",
@@ -116,7 +116,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
 
     {
       overallProductivity: 25,
-      name: "Maciej Borek",
+      name: "Richard Brown",
       totalUnproductiveSeconds: 15000,
       totalProductiveSeconds: 5000,
       mkmID: "ec1926192.168.0.60_5-dd75-46a7-8",
@@ -177,7 +177,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
     {
       totalSeconds: 2200,
-      name: "Pudelek",
+      name: "Twitter",
     },
     {
       totalSeconds: 1800,
@@ -185,23 +185,23 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
     {
       totalSeconds: 1673,
-      name: "Wirtualna Polska",
+      name: "TikTok",
     },
     {
       totalSeconds: 582,
-      name: "Allegro",
+      name: "WeChat",
     },
     {
       totalSeconds: 433,
-      name: "gry.pl",
+      name: "eBay",
     },
     {
       totalSeconds: 6,
-      name: "Onet",
+      name: "BBC News",
     },
     {
       totalSeconds: 5,
-      name: "Interia",
+      name: "Twitch",
     },
     {
       totalSeconds: 4,
@@ -215,61 +215,50 @@ const Component: React.FunctionComponent<IComponentProps> = (
       totalSeconds: 2900,
       websiteName: "Youtube",
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      name: "Jan Kowalski",
+      name: "Richard Brown",
     },
     {
       totalSeconds: 2750,
       websiteName: "Facebook",
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      name: "Jan Kowalski",
-    },
-    {
-      totalSeconds: 2290,
-      websiteName: "Pudelek",
-      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      name: "Maria Kowalski",
+      name: "Sarah Williams",
     },
     {
       totalSeconds: 2200,
       websiteName: "Instagram",
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      name: "Karolina Kowalska",
+      name: "Sarah Williams",
     },
     {
       totalSeconds: 1900,
-      websiteName: "gry.pl",
+      websiteName: "Ebay",
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      name: "Karol Bachaj",
+      name: "Margaret Wilson",
+    },
+
+    {
+      totalSeconds: 1354,
+      websiteName: "Pinterest",
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+      name: "William Taylor",
     },
     {
-      totalSeconds: 1876,
-      websiteName: "Wirtualna Polska",
+      totalSeconds: 1354,
+      websiteName: "BBC News",
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      name: "Maciej Kowalski",
-    },
-    {
-      totalSeconds: 1500,
-      websiteName: "Allegro",
-      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      name: "Maja Kowalska",
-    },
-    {
-      totalSeconds: 1200,
-      websiteName: "Onet",
-      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      name: "Maja Kowalska",
-    },
-    {
-      totalSeconds: 1000,
-      websiteName: "Interia",
-      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      name: "Maja Kowalska",
+      name: "William Taylor",
     },
     {
       totalSeconds: 900,
-      websiteName: "Pinterest",
+      websiteName: "Twitch",
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      name: "Karol Bachaj",
+      name: "Richard Brown",
+    },
+    {
+      totalSeconds: 300,
+      websiteName: "TikTok",
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+      name: "William Taylor",
     },
   ]);
   const [selectedUser, setSelectedUser] = useState<IUserProductivityRecord>();
@@ -279,56 +268,56 @@ const Component: React.FunctionComponent<IComponentProps> = (
   const [selectedReportMode, setSelectedReportMode] = useState<IReportMode>();
   const [top10InactiveMouse, setTop10InactiveMouse] = useState<any[]>([
     {
-      userName: "Maria Zielnik",
+      userName: "Margaret Wilson",
       startTimeLabel: "07:40:09",
       totalSeconds: 2300,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Maria Zielnik",
+      userName: "Sarah Williams",
       startTimeLabel: "12:21:09",
       totalSeconds: 2111,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Marcin Bielik",
+      userName: "Richard Brown",
       startTimeLabel: "14:22:11",
       totalSeconds: 2100,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Karol Janas",
+      userName: "William Taylor",
       startTimeLabel: "15:22:56",
       totalSeconds: 1824,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Jan Kowalski",
+      userName: "James Jones ",
       startTimeLabel: "13:12:50",
       totalSeconds: 1799,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Marian Drabik",
+      userName: "James Jones ",
       startTimeLabel: "11:22:11",
       totalSeconds: 1700,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Maria Zielnik",
+      userName: "Richard Brown",
       startTimeLabel: "09:35:01",
       totalSeconds: 1540,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
 
     {
-      userName: "Kamila Czernik",
+      userName: "Margaret Wilson",
       startTimeLabel: "16:00:41",
       totalSeconds: 1200,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Justyna Mach",
+      userName: "Richard Brown",
       startTimeLabel: "12:00:09",
       totalSeconds: 999,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
@@ -336,55 +325,55 @@ const Component: React.FunctionComponent<IComponentProps> = (
   ]);
   const [top10InactiveKeyboard, setTop10InactiveKeyboard] = useState<any[]>([
     {
-      userName: "Jan Kowalski",
+      userName: "Richard Brown",
       startTimeLabel: "07:40:09",
       totalSeconds: 3921,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Jan Kowalski",
+      userName: "Sarah Williams",
       startTimeLabel: "12:21:09",
       totalSeconds: 3300,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Maria Zielnik",
+      userName: "Margaret Wilson",
       startTimeLabel: "09:35:01",
       totalSeconds: 2940,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Marcin Bielik",
+      userName: "Richard Brown",
       startTimeLabel: "14:22:11",
       totalSeconds: 2100,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Karol Janas",
+      userName: "William Taylor",
       startTimeLabel: "15:22:56",
       totalSeconds: 1824,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Kamila Czernik",
+      userName: "William Taylor",
       startTimeLabel: "16:00:41",
       totalSeconds: 1200,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Justyna Mach",
+      userName: "Richard Brown",
       startTimeLabel: "12:00:09",
       totalSeconds: 999,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Jan Kowalski",
+      userName: "Margaret Wilson",
       startTimeLabel: "13:12:50",
       totalSeconds: 754,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
     },
     {
-      userName: "Marian Drabik",
+      userName: "Richard Brown",
       startTimeLabel: "11:22:11",
       totalSeconds: 360,
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
@@ -393,7 +382,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
   const [mouseKeyboardActivity, setMouseKeyboardActivity] = useState<any[]>([
     {
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      userName: "Jan Kowalski",
+      userName: "William Taylor",
       mouseClickCounter: 12100,
       keyboardClickCounter: 9121,
       totalSecondsMouseIdle: 14308,
@@ -478,7 +467,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
     {
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      userName: "	Maria Zielnik",
+      userName: "Sarah Williams",
       mouseClickCounter: 9200,
       keyboardClickCounter: 7100,
       totalSecondsMouseIdle: 2800,
@@ -562,7 +551,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
     {
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      userName: "Marcin Bielik",
+      userName: "James Jones",
       mouseClickCounter: 8100,
       keyboardClickCounter: 9300,
       totalSecondsMouseIdle: 2433,
@@ -646,7 +635,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
     {
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      userName: "Karol Janas",
+      userName: "John Smith",
       mouseClickCounter: 7000,
       keyboardClickCounter: 11002,
       totalSecondsMouseIdle: 1900,
@@ -730,7 +719,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
     {
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      userName: "	Justyna Mach",
+      userName: "Richard Brown",
       mouseClickCounter: 5405,
       keyboardClickCounter: 7657,
       totalSecondsMouseIdle: 2900,
@@ -815,7 +804,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
 
     {
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      userName: "Marian Drabik",
+      userName: "Margaret Wilson",
       mouseClickCounter: 3400,
       keyboardClickCounter: 4357,
       totalSecondsMouseIdle: 1095,
@@ -905,12 +894,12 @@ const Component: React.FunctionComponent<IComponentProps> = (
   let interval: any;
 
   const HandleUnallowedAppsClick = () => {
-    setModalTittleToRender("Czas W Zakazanych");
+    setModalTittleToRender("Forbidden Phrases");
     setSelectedReportMode(IReportMode.UnallowedWebsites);
   };
 
   const HandleLockedScreenClick = () => {
-    setModalTittleToRender("Zablokowany Ekran");
+    setModalTittleToRender("Locked Screen");
     setSelectedReportMode(IReportMode.LockedScreen);
   };
 
@@ -1078,7 +1067,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
         <div className="header-stats-main">
           <div className="header-stats">
             <div className="header-stat-box box">
-              <p>Produktywny Czas</p>
+              <p>Productive Time</p>
               <div className="icon-time-container">
                 <div>
                   <img
@@ -1112,9 +1101,9 @@ const Component: React.FunctionComponent<IComponentProps> = (
               onClick={HandleUnallowedAppsClick}
               className="header-stat-box box tr-click-user"
             >
-              <p>Czas W Zakazanych</p>
+              <p>Forbidden Phrases</p>
               <div className="icon-time-container">
-                <button className="button is-info">Kliknij</button>
+                <button className="button is-info">Click me</button>
                 <div>
                   <img
                     width="100px"
@@ -1150,7 +1139,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
 
           <div className="header-stats">
             <div className="header-stat-box box">
-              <p>Nieproduktywny Czas</p>
+              <p>Unproductive Time</p>
               <div className="icon-time-container">
                 <div>
                   <img
@@ -1184,9 +1173,9 @@ const Component: React.FunctionComponent<IComponentProps> = (
               onClick={HandleLockedScreenClick}
               className="header-stat-box box tr-click-user"
             >
-              <p>Zablokowany Ekran</p>
+              <p>Locked Screen</p>
               <div className="icon-time-container">
-                <button className="button is-info">Kliknij</button>
+                <button className="button is-info">Click me</button>
                 <div>
                   <img
                     width="100px"
@@ -1221,15 +1210,15 @@ const Component: React.FunctionComponent<IComponentProps> = (
         <div className="lower-stats-main">
           <div className="lower-stat-side-panel box">
             <p className="lower-panel-header-text ">
-              <b>TOP 10 Aplikacji</b>
+              <b>TOP APPLICATIONS</b>
             </p>
             <hr />
 
             <table className="table is-fullwidth is-striped">
               <thead className="head">
-                <th className="th">Miejsce</th>
-                <th className="th">Aplikacja</th>
-                <th className="th">Czas</th>
+                <th className="th">Position</th>
+                <th className="th">Application</th>
+                <th className="th">Time</th>
               </thead>
               <tbody className="tbody">
                 {top10Apps.map((r, index) => {
@@ -1267,16 +1256,16 @@ const Component: React.FunctionComponent<IComponentProps> = (
           </div>
           <div className="lower-stat-mid-panel box">
             <p className="lower-panel-header-text ">
-              <b>Wydajność Pracowników</b>
+              <b>EMPLOYEE PRODUCTIVITY</b>
             </p>
             <hr />
 
             <table className="table is-fullwidth">
               <thead className="head">
-                <th className="th">Pracownik</th>
-                <th className="th">Produktywny Czas</th>
-                <th className="th">Nieproduktywny Czas</th>
-                <th className="th">Produktywnosc</th>
+                <th className="th">Employee</th>
+                <th className="th">Productive Time</th>
+                <th className="th">Unproductive Time</th>
+                <th className="th">Productivity</th>
                 <th className="th"></th>
               </thead>
               <tbody className="tbody">
@@ -1332,7 +1321,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                       </td>
 
                       <td className="td has-text-centered">
-                        <button className="button is-info">Kliknij</button>
+                        <button className="button is-info">Click me</button>
                       </td>
                     </tr>
                   );
@@ -1348,9 +1337,9 @@ const Component: React.FunctionComponent<IComponentProps> = (
 
             <table className="table is-fullwidth is-striped is-hoverable">
               <thead className="head">
-                <th className="th">Miejsce</th>
-                <th className="th">Strona</th>
-                <th className="th">Czas</th>
+                <th className="th">Position</th>
+                <th className="th">Website</th>
+                <th className="th">Time</th>
                 <th className="th"></th>
               </thead>
               <tbody className="tbody">
@@ -1385,7 +1374,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                         </div>
                       </td>
                       <td className="td">
-                        <button className="button is-info">Kliknij</button>
+                        <button className="button is-info">Click me</button>
                       </td>
                     </tr>
                   );
@@ -1403,7 +1392,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
               {top10Apps.length > 0 && (
                 <AccumulationChartComponent
                   id="apps-chart-unique456a2333324"
-                  title="Aplikacje"
+                  title="Applications"
                   legendSettings={{ visible: true }}
                   enableSmartLabels={true}
                   width={"100%"}
@@ -1450,16 +1439,16 @@ const Component: React.FunctionComponent<IComponentProps> = (
           </div>
           <div className="lower-stat-mid-panel box">
             <p className="lower-panel-header-text ">
-              <b>Najdłużej w social media</b>
+              <b>LONGEST TIME IN SOCIAL MEDIA</b>
             </p>
             <hr />
 
             <table className="table is-fullwidth">
               <thead className="head">
-                <th className="th">Strona</th>
-                <th className="th">Pracownik</th>
+                <th className="th">Website</th>
+                <th className="th">Employee</th>
 
-                <th className="th">Spędzony Czas</th>
+                <th className="th">Total</th>
                 <th className="th"></th>
               </thead>
               <tbody className="tbody">
@@ -1493,7 +1482,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                         </div>
                       </td>
                       <td className="td">
-                        <button className="button is-info">Kliknij</button>
+                        <button className="button is-info">Click me</button>
                       </td>
                     </tr>
                   );
@@ -1558,7 +1547,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
           <div className="lower-stat-side-panel box">
             <div className="tags has-addons">
               <span className="tag  is-large is-dark">
-                OGOLNA ŚREDNIA KLIKNIĘĆ KLAWIATURA
+                AVERAGE KEYBOARD CLICKS
                 <i className="fas fa-keyboard add-margin"></i>
               </span>
               <span className="tag is-large is-primary">{7484}</span>
@@ -1567,7 +1556,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
 
             <p className="lower-panel-header-text ">
               <b>
-                NAJDŁUŻEJ Niekatywna Klawiatura
+                LONGEST INACTIVE KEYBOARD
                 <i className="fas fa-keyboard"></i>
               </b>
             </p>
@@ -1575,9 +1564,9 @@ const Component: React.FunctionComponent<IComponentProps> = (
             <table className="table is-fullwidth is-striped">
               <thead className="head">
                 <th></th>
-                <th className="th">Pracownik</th>
-                <th className="th">Godzina</th>
-                <th className="th">Nieaktywny Czas</th>
+                <th className="th">Employee</th>
+                <th className="th">Time</th>
+                <th className="th">Duration time</th>
                 <th className="th"></th>
               </thead>
               <tbody className="tbody">
@@ -1614,7 +1603,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                         </div>
                       </td>
                       <td className="td">
-                        <button className="button is-info">Kliknij</button>
+                        <button className="button is-info">Click me</button>
                       </td>
                     </tr>
                   );
@@ -1625,25 +1614,25 @@ const Component: React.FunctionComponent<IComponentProps> = (
           <div className="lower-stat-mid-panel box">
             <div className="lower-panel-header-text has-text-centered ">
               <div className="has-text-centered">
-                <b>STATYSTYKI AKTYWNOŚCI</b>
+                <b>ACTIVITY STATISTICS</b>
               </div>
             </div>
             <hr />
 
             <table className="table is-fullwidth">
               <thead className="head">
-                <th className="th">Pracownik</th>
+                <th className="th">Employee</th>
                 <th className="th">
-                  <i className="fas fa-keyboard"></i> Klikniecia
+                  <i className="fas fa-keyboard"></i> Clicks
                 </th>
                 <th className="th">
-                  <i className="fas fa-keyboard"></i> Brak Aktywnosci
+                  <i className="fas fa-keyboard"></i> Lack of activity
                 </th>
                 <th className="th">
-                  <i className="fas fa-mouse-pointer"></i> Klikniecia
+                  <i className="fas fa-mouse-pointer"></i> Clicks
                 </th>
                 <th className="th">
-                  <i className="fas fa-mouse-pointer"></i> Brak Aktywnosci
+                  <i className="fas fa-mouse-pointer"></i> Lack of activity
                 </th>
                 <th className="th"></th>
               </thead>
@@ -1704,7 +1693,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                         </div>
                       </td>
                       <td className="td">
-                        <button className="button is-info">Kliknij</button>
+                        <button className="button is-info">Click me</button>
                       </td>
                     </tr>
                   );
@@ -1715,7 +1704,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
           <div className="lower-stat-side-panel box">
             <div className="tags has-addons">
               <span className="tag  is-large is-dark">
-                OGOLNA ŚREDNIA KLIKNIĘĆ MYSZKA
+                AVERAGE MOUSE CLICKS
                 <i className="fas fa-mouse-pointer add-margin"></i>
               </span>
               <span className="tag is-large is-primary">{7534}</span>
@@ -1723,7 +1712,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
             <hr />
             <p className="lower-panel-header-text ">
               <b>
-                NAJDŁUŻEJ NIEKATYWNA Myszka
+                LONGEST INACTIVE MOUSE
                 <i className="fas fa-mouse-pointer"></i>
               </b>
             </p>
@@ -1732,9 +1721,9 @@ const Component: React.FunctionComponent<IComponentProps> = (
             <table className="table is-fullwidth is-striped">
               <thead className="head">
                 <th></th>
-                <th className="th">Pracownik</th>
-                <th className="th">Godzina</th>
-                <th className="th">Nieaktywny Czas</th>
+                <th className="th">Employee</th>
+                <th className="th">Time</th>
+                <th className="th">Duration time</th>
                 <th className="th"></th>
               </thead>
               <tbody className="tbody">
@@ -1771,7 +1760,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                         </div>
                       </td>
                       <td className="td">
-                        <button className="button is-info">Kliknij</button>
+                        <button className="button is-info">Click me</button>
                       </td>
                     </tr>
                   );

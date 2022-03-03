@@ -34,22 +34,20 @@ const Component: React.FunctionComponent<IComponentProps> = (
   ]);
   const [productiveWebsites, setProductiveWebsites] = useState<string[]>([
     "Wikipedia",
-    "Geoportal",
     "Gmail",
     "Linkedin",
-    "PWZ Powiat Warszawski Zachodni",
   ]);
   const [badWebsites, setBadWebsites] = useState<string[]>([
-    "Praca dla geodety",
-
     "xxx",
+    "job search",
+    "copy company data",
   ]);
   const [currentActive, setCurrentActive] = useState<CurrentActiveTab>(
     CurrentActiveTab.PRODUCTIVITY_SETTING
   );
 
   const HandleClick = () => {
-    alert("Opcja dostępna będzie po zarejestrowaniu");
+    alert("Registration Required");
   };
 
   const ListViewTemplate = (value: string, type: string) => {
@@ -81,7 +79,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 : ""
             } `}
           >
-            <a>Produktywność</a>
+            <a>Productivity</a>
           </li>
           <li
             onClick={HandleTabClick(CurrentActiveTab.TRACKING_SETTINGS)}
@@ -91,7 +89,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 : ""
             } `}
           >
-            <a>Monitorowanie</a>
+            <a>Monitoring</a>
           </li>
         </ul>
       </div>
@@ -102,7 +100,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
       {currentActive === CurrentActiveTab.PRODUCTIVITY_SETTING && (
         <>
           <p className="has-text-centered heading-info-text-primary">
-            Zdefiniuj produktywność
+            Define productivity
           </p>
 
           <div className="icons-container-header box">
@@ -122,7 +120,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
               </p>
 
               <p>
-                <b>Produktywne Aplikacje</b>
+                <b>Productive Applications</b>
               </p>
               <br />
               <div className="columns">
@@ -149,13 +147,13 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 <i className="fas fa-info"></i>
               </p>
               <p>
-                <b>Produktywne Strony</b>
+                <b>Productive Websites</b>
               </p>
               <br />
               <div className="columns">
                 <div className="column is-11">
                   <input
-                    placeholder="Wikipedia, Gmail, Geoportal, Baza danych klientów"
+                    placeholder="Wikipedia, Gmail, Linkedin"
                     className="input"
                   />
                 </div>
@@ -195,10 +193,10 @@ const Component: React.FunctionComponent<IComponentProps> = (
               <div className="list-wrapper">
                 {[
                   "Facebook",
-                  "Interia",
-                  "Onet",
-                  "Pudelek",
-                  "Wirtualna Polska",
+                  "BBC News",
+                  "Ebay",
+                  "Tiktok",
+                  "Youtube",
                   "Instagram",
                 ].map((r) => {
                   return ListViewTemplate(r, "socialMedia");
@@ -210,7 +208,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 <i className="fas fa-info"></i>
               </p>
               <p>
-                <b>Zakazane Frazy</b>
+                <b>Forbidden Phrases</b>
               </p>
               <br />
               <div className="columns">

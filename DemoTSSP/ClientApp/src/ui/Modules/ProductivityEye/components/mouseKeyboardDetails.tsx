@@ -36,7 +36,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 style={{ textTransform: "uppercase" }}
                 className="has-text-centered is-size-1 has-text-primary"
               >
-                <b>Demo Profil </b>
+                <b>Demo Profile </b>
               </div>
               <br />
               <br />
@@ -46,7 +46,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                   <div className="average-container">
                     <div className="tags has-addons">
                       <span className="tag  is-large is-dark">
-                        OGOLNA ŚREDNIA KLIKNIĘĆ KLAWIATURA
+                        AVERAGE KEYBOARD CLICKS
                         <i className="fas fa-keyboard add-margin"></i>
                       </span>
                       <span className="tag is-large is-primary">
@@ -54,7 +54,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                       </span>
 
                       <span className="tag  is-large is-dark">
-                        OGOLNA ŚREDNIA KLIKNIĘĆ MYSZKA
+                        AVERAGE MOUSE CLICKS
                         <i className="fas fa-mouse-pointer add-margin"></i>
                       </span>
                       <span className="tag is-large is-primary">
@@ -69,25 +69,25 @@ const Component: React.FunctionComponent<IComponentProps> = (
                   <table className="table is-fullwidth">
                     <thead className="head">
                       <th className="th">
-                        <i className="fas fa-keyboard"></i> Kliknięcia
+                        <i className="fas fa-keyboard"></i> Clicks
                       </th>
                       <th className="th">
-                        <i className="fas fa-keyboard"></i> Różnica Od Średniej
+                        <i className="fas fa-keyboard"></i> Difference from
+                        average
                       </th>
                       <th className="th">
-                        <i className="fas fa-keyboard"></i> Brak Aktywności
-                        Klawiatury
+                        <i className="fas fa-keyboard"></i> Lack of activity
                       </th>
                       <th className="th">
-                        <i className="fas fa-mouse-pointer"></i> Klikniecia
+                        <i className="fas fa-mouse-pointer"></i> Clicks
                       </th>
                       <th className="th">
-                        <i className="fas fa-mouse-pointer"></i> Różnica Od
-                        Średniej
+                        <i className="fas fa-mouse-pointer"></i> Difference from
+                        average
                       </th>
                       <th className="th">
-                        <i className="fas fa-mouse-pointer"></i> Brak Aktywności
-                        Myszki
+                        <i className="fas fa-mouse-pointer"></i> Lack of
+                        activity
                       </th>
                     </thead>
                     <tbody className="tbody">
@@ -202,7 +202,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 <div className="lower-stat-side-panel box">
                   <p className="lower-panel-header-text ">
                     <b>
-                      Niekatywna Klawiatura
+                      INACTIVE KEYBOARD
                       <i className="fas fa-keyboard"></i>
                     </b>
                   </p>
@@ -212,8 +212,8 @@ const Component: React.FunctionComponent<IComponentProps> = (
                     <thead className="head">
                       <th></th>
 
-                      <th className="th">Godzina</th>
-                      <th className="th">Nieaktywny Czas</th>
+                      <th className="th">Time</th>
+                      <th className="th"> Duration time</th>
                     </thead>
                     <tbody className="tbody">
                       {props.record.keyboardIdleEvents.map(
@@ -256,7 +256,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 <div className="lower-stat-side-panel box">
                   <p className="lower-panel-header-text ">
                     <b>
-                      Niekatywna Myszka
+                      INACTIVE MOUSE
                       <i className="fas fa-mouse-pointer add-margin"></i>
                     </b>
                   </p>
@@ -266,8 +266,8 @@ const Component: React.FunctionComponent<IComponentProps> = (
                     <thead className="head">
                       <th></th>
 
-                      <th className="th">Godzina</th>
-                      <th className="th">Nieaktywny Czas</th>
+                      <th className="th">Time</th>
+                      <th className="th"> Duration time</th>
                     </thead>
                     <tbody className="tbody">
                       {props.record.mouseIdleEvents.map(

@@ -12,18 +12,18 @@ const Component: React.FunctionComponent<IComponentProps> = (
   props: IComponentProps
 ) => {
   const HandleClick = () => {
-    alert("Opcja dostępna będzie po zarejestrowaniu");
+    alert("Registration Required");
   };
 
   return (
     <div className={props.className}>
       <div className="has-text-centered license-key-container">
         <p className="is-size-1">
-          <b>Klucz Licencyjny</b>
+          <b>License Key</b>
         </p>
         <p onClick={HandleClick} className="is-size-1">
           <span className="tag is-primary is-large">
-            Akonv429SFkV0496sk1cmoi4a355fdakRJIsori54HMK
+            S429SFkV0496sk1cmoi4a355fdakRJIsori54HMK
           </span>
           <i className="far fa-copy"></i>
         </p>
@@ -31,7 +31,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
 
       <div>
         <p onClick={HandleClick} className="download-software has-text-info">
-          <a>Pobierz Cloud Eye 👁</a>
+          <a>Download Cloud Eye 👁</a>
           <br />
           <i className="fas fa-cloud-download-alt"></i>
         </p>

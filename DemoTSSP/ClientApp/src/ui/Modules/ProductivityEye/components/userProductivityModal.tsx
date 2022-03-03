@@ -149,7 +149,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
     {
       totalSeconds: 2200,
-      name: "Pudelek",
+      name: "Twitter",
     },
     {
       totalSeconds: 1800,
@@ -157,23 +157,23 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
     {
       totalSeconds: 1673,
-      name: "Wirtualna Polska",
+      name: "TikTok",
     },
     {
       totalSeconds: 582,
-      name: "Allegro",
+      name: "WeChat",
     },
     {
       totalSeconds: 433,
-      name: "gry.pl",
+      name: "eBay",
     },
     {
       totalSeconds: 6,
-      name: "Onet",
+      name: "BBC News",
     },
     {
       totalSeconds: 5,
-      name: "Interia",
+      name: "Twitch",
     },
     {
       totalSeconds: 4,
@@ -183,21 +183,22 @@ const Component: React.FunctionComponent<IComponentProps> = (
   const [logData, setLogData] = useState<UserHistoryData[]>([
     {
       activity:
-        "chrome - Platforma do zarządzania firmą online - Google Chrome",
+        "chrome - Security Officer in South West London, London | Great Scotland Yard - Caterer.com - Google Chrome",
       category: "chrome ",
       time: "21:34:44",
       totalDuration: "00:00:41",
       productive: 1,
     },
     {
-      activity: "chrome - New Tab - Google Chrome",
+      activity: "chrome - Apply - Google Chrome",
       category: "chrome ",
       time: "21:35:25",
       totalDuration: "00:00:04",
       productive: 0,
     },
     {
-      activity: "chrome - YouTube - Google Chrome",
+      activity:
+        "chrome - Security Officer in South West London, London | Great Scotland Yard - Caterer.com - Google Chrome",
       category: "chrome ",
       time: "21:35:29",
       totalDuration: "00:00:10",
@@ -205,7 +206,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
     {
       activity:
-        "chrome - zenek martyniuk przez twe oczy zielone - YouTube - Google Chrome",
+        "	chrome - Jobs in London in March 2022 | London Jobs & Vacancies - totaljobs - Google Chrome",
       category: "chrome ",
       time: "21:35:39",
       totalDuration: "00:00:06",
@@ -213,7 +214,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
     {
       activity:
-        "chrome - Zenek Martyniuk (Akcent) - Przez Twe Oczy Zielone - YouTube - Google Chrome",
+        "chrome - Lenovo V15 Laptop AMD Athlon Silver 3050U 4GB RAM 128GB SSD 15.6 FHD Win 10 HM 195235875308 | eBay - Google Chrome",
       category: "chrome ",
       time: "21:35:45",
       totalDuration: "00:00:08",
@@ -221,15 +222,14 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
     {
       activity:
-        "chrome - Darmowe gry – graj w gry online na gry.pl - Google Chrome",
+        "chrome - chrome - Electronics, Cars, Fashion, Collectibles & More | eBay - Google Chrome",
       category: "chrome ",
       time: "21:35:53",
       totalDuration: "00:00:07",
       productive: 0,
     },
     {
-      activity:
-        "chrome - Rush Race - Zagraj w Rush Race online na Gry.pl - Google Chrome",
+      activity: "chrome - ebay - Google Search - Google Chrome",
       category: "chrome ",
       time: "21:36:00",
       totalDuration: "00:00:24",
@@ -237,24 +237,22 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
 
     {
-      activity:
-        "chrome - Rush Race - Zagraj w Rush Race online na Gry.pl - Google Chrome",
+      activity: "chrome - London - BBC Weather - Google Chrome",
       category: "chrome ",
       time: "21:36:26",
       totalDuration: "00:00:06",
       productive: 0,
     },
     {
-      activity: "chrome - https://intera.pl - Google Chrome",
+      activity: "chrome - BBC Weather - Home - Google Chrome",
       category: "chrome ",
       time: "21:36:32",
       totalDuration: "00:00:02",
       productive: 0,
     },
     {
-      activity:
-        "chrome - Alex (@alex.pasek) • Instagram photos and videos - Google Chrome",
-      category: "chrome ",
+      activity: "	Skype - Skype",
+      category: "Skype ",
       time: "21:36:34",
       totalDuration: "00:00:09",
       productive: 0,
@@ -267,44 +265,44 @@ const Component: React.FunctionComponent<IComponentProps> = (
       productive: 0,
     },
     {
-      activity: "chrome - Google - Google Chrome",
-      category: "chrome ",
+      activity: "SearchHost -",
+      category: "searchhost ",
       time: "21:36:47",
       totalDuration: "00:00:16",
       productive: 0,
     },
     {
-      activity: "chrome - praca dla geodetow - Google Search - Google Chrome",
+      activity:
+        "	chrome - monitoring from cloud - Twitter Search / Twitter - Google Chrome",
       category: "chrome ",
       time: "21:37:03",
       totalDuration: "00:00:02",
       productive: 1,
     },
     {
-      activity:
-        "chrome - GEOFORUM - Ogłoszenia drobne - Ogłoszenia - Dam pracę - Google Chrome",
-      category: "chrome ",
+      activity: "msteams - Teams",
+      category: "teams ",
       time: "21:37:05",
       totalDuration: "00:00:04",
       productive: 1,
     },
     {
-      activity: "chrome - praca dla geodetow - Google Search - Google Chrome",
+      activity:
+        "chrome - Ukraine latest news: Zelensky asks Putin for talks as humanitarian crisis grows - BBC News - Google Chrome",
       category: "chrome ",
       time: "21:37:09",
       totalDuration: "00:00:11",
       productive: 1,
     },
     {
-      activity:
-        "chrome - jak oszukac pracodawce - Google Search - Google Chrome",
+      activity: "chrome - Home - BBC News - Google Chrome",
       category: "chrome ",
       time: "21:37:20",
       totalDuration: "00:00:02",
       productive: 0,
     },
     {
-      activity: "chrome - Jak oszukać szefa? | Kafeteria.pl - Google Chrome",
+      activity: "	chrome - bbc news - Google Search - Google Chrome",
       category: "chrome ",
       time: "21:37:22",
       totalDuration: "00:00:10",
@@ -312,7 +310,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
     {
       activity:
-        "chrome - Wirtualna Polska - Wszystko co ważne - www.wp.pl - Google Chrome",
+        "chrome - Ed Sheeran - Perfect (1 Hour Music Lyrics) - YouTube - Google Chrome",
       category: "chrome ",
       time: "21:37:32",
       totalDuration: "00:00:28",
@@ -320,7 +318,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
     {
       activity:
-        "chrome - Pożary instalacji fotowoltaicznych. Eksperci radzą jak ich uniknąć | Gadżetomania.pl - Google Chrome",
+        "chrome - A Thousand Years - [ 1 HOUR ] - YouTube - Google Chrome",
       category: "chrome ",
       time: "21:38:00",
       totalDuration: "00:00:13",
@@ -334,31 +332,30 @@ const Component: React.FunctionComponent<IComponentProps> = (
       productive: 0,
     },
     {
-      activity: "chrome - onet wiadomosci - Google Search - Google Chrome",
+      activity:
+        "chrome - Chillout Lounge - Calm & Relaxing Background Music | Study, Work, Sleep, Meditation, Chill - YouTube - Google Chrome",
       category: "chrome ",
       time: "21:38:17",
       totalDuration: "00:00:04",
       productive: 0,
     },
     {
-      activity:
-        "chrome - Wiadomości - Wiadomości w Onet - Najnowsze i Najważniejsze Wiadomości z Kraju i Świata - Google Chrome",
+      activity: "chrome - BBC News search - Google Chrome",
       category: "chrome ",
       time: "21:38:21",
       totalDuration: "00:00:28",
       productive: 0,
     },
     {
-      activity: "chrome - wikipedia kopernik - Google Search - Google Chrome",
-      category: "chrome ",
+      activity: "WINWORD - Word (Unlicensed Product)",
+      category: "winword ",
       time: "21:38:49",
       totalDuration: "00:00:05",
       productive: 1,
     },
     {
-      activity:
-        "chrome - Mikołaj Kopernik – Wikipedia, wolna encyklopedia - Google Chrome",
-      category: "chrome ",
+      activity: "EXCEL - Excel (Unlicensed Product)",
+      category: "excel ",
       time: "21:38:54",
       totalDuration: "00:00:10",
       productive: 1,
@@ -407,35 +404,12 @@ const Component: React.FunctionComponent<IComponentProps> = (
       productive: 1,
     },
     {
-      activity: "chrome - pudelek - Google Search - Google Chrome",
+      activity:
+        "chrome - Chillout Lounge - Calm & Relaxing Background Music | Study, Work, Sleep, Meditation, Chill - YouTube - Google Chrome",
       category: "chrome ",
       time: "21:39:33",
       totalDuration: "00:00:02",
       productive: 0,
-    },
-    {
-      activity:
-        "chrome - Pudelek.pl - Plotki, Gwiazdy, Sensacja - Pudelek - Google Chrome",
-      category: "chrome ",
-      time: "21:39:35",
-      totalDuration: "00:00:20",
-      productive: 0,
-    },
-    {
-      activity:
-        "chrome - Andrzej Duda i Agata Kornhauser-Duda maszerują brzegiem morza na wakacjach w Juracie (ZDJĘCIA) - Pudelek - Google Chrome",
-      category: "chrome ",
-      time: "21:39:55",
-      totalDuration: "00:00:17",
-      productive: 0,
-    },
-    {
-      activity:
-        "chrome - Platforma do zarządzania firmą online - Google Chrome",
-      category: "chrome ",
-      time: "21:40:12",
-      totalDuration: "00:00:12",
-      productive: 1,
     },
   ]);
   const [allowPaging, setAllowPaging] = useState(true);
@@ -529,7 +503,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
               style={{ textTransform: "uppercase" }}
               className="has-text-centered is-size-1 has-text-primary"
             >
-              <b>Profil Demo Pracownika</b>
+              <b>Employee Demo Profile</b>
             </div>
             <ChartComponent
               id="charsgugugagasdasdts"
@@ -557,7 +531,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 labelFormat: "{value}%",
               }}
               chartArea={{ border: { width: 0 } }}
-              title="Produktywność Ostatnie 14 Dni"
+              title="Productivity last 14 days"
               tooltip={{ enable: true }}
             >
               <Inject
@@ -664,7 +638,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
               <div className="header-stats-main">
                 <div className="header-stats">
                   <div className="header-stat-box box">
-                    <p>Produktywny Czas</p>
+                    <p>Productive Time</p>
                     <div className="icon-time-container">
                       <div>
                         <img
@@ -695,7 +669,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                     </div>
                   </div>
                   <div className="header-stat-box box">
-                    <p>Czas W Zakazanych</p>
+                    <p>Forbidden Phrases</p>
                     <div className="icon-time-container">
                       <div>
                         <img
@@ -732,7 +706,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
 
                 <div className="header-stats">
                   <div className="header-stat-box box">
-                    <p>Nieproduktywny Czas</p>
+                    <p>Unproductive Time</p>
                     <div className="icon-time-container">
                       <div>
                         <img
@@ -763,7 +737,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                     </div>
                   </div>
                   <div className="header-stat-box box">
-                    <p>Zablokowany Ekran</p>
+                    <p>Locked Screen</p>
                     <div className="icon-time-container">
                       <div>
                         <img
@@ -799,7 +773,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
               <div className="lower-stats-main">
                 <div className="lower-stat-mid-panel box">
                   <p className="lower-panel-header-text ">
-                    <b>Przykładowa Historia Aktywności ({logData.length})</b>
+                    <b>Activity History ({logData.length})</b>
                   </p>
                   <hr />
 
@@ -826,32 +800,32 @@ const Component: React.FunctionComponent<IComponentProps> = (
                     <ColumnsDirective>
                       <ColumnDirective
                         field="productive"
-                        headerText="Typ"
+                        headerText="Productive"
                         template={ProductivityTemplate}
                         width="45px"
                       />
 
                       <ColumnDirective
                         field="time"
-                        headerText="Godzina"
+                        headerText="Time"
                         type="time"
                         isPrimaryKey={true}
                         width="85px"
                       />
                       <ColumnDirective
                         field="totalDuration"
-                        headerText="Czas Trwania"
+                        headerText="Duration"
                         width="100px"
                       />
                       <ColumnDirective
                         field="category"
-                        headerText="Kategoria"
+                        headerText="Category"
                         width="100px"
                       />
 
                       <ColumnDirective
                         field="activity"
-                        headerText="Aktywność"
+                        headerText="Activity"
                         width="500px"
                       />
                     </ColumnsDirective>
@@ -882,15 +856,15 @@ const Component: React.FunctionComponent<IComponentProps> = (
               <div className="apps-and-media-container">
                 <div className="box">
                   <p className="lower-panel-header-text ">
-                    <b>TOP 10 Aplikacji</b>
+                    <b>TOP APPLICATIONS</b>
                   </p>
                   <hr />
 
                   <table className="table is-fullwidth is-striped">
                     <thead className="head">
-                      <th className="th">Miejsce</th>
-                      <th className="th">Aplikacja</th>
-                      <th className="th">Czas</th>
+                      <th className="th">Position</th>
+                      <th className="th">Application</th>
+                      <th className="th">Time</th>
                     </thead>
                     <tbody className="tbody">
                       {top10Apps.map((r, index) => {
@@ -932,7 +906,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                     {top10Apps.length > 0 && (
                       <AccumulationChartComponent
                         id="apps-chart-unique4563fwwert24"
-                        title="Aplikacje"
+                        title="Application's"
                         legendSettings={{ visible: true }}
                         enableSmartLabels={true}
                         width={"100%"}
@@ -1029,15 +1003,15 @@ const Component: React.FunctionComponent<IComponentProps> = (
 
                 <div className="box">
                   <p className="lower-panel-header-text ">
-                    <b>Czas W Social Media</b>
+                    <b>Time in social media</b>
                   </p>
                   <hr />
 
                   <table className="table is-fullwidth is-striped">
                     <thead className="head">
-                      <th className="th">Miejsce</th>
-                      <th className="th">Aplikacja</th>
-                      <th className="th">Czas</th>
+                      <th className="th">Position</th>
+                      <th className="th">Website</th>
+                      <th className="th">Time</th>
                     </thead>
                     <tbody className="tbody">
                       {socialMedia.map((r, index) => {

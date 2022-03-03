@@ -10,11 +10,7 @@ const rootElement = document.getElementById("root");
 
 ReactDOM.render(
   <>
-    <Suspense
-      fallback={
-        <Spinner label="MKM Professionals - Przygotowywanie danych do demo, prosimy o cierpliwość" />
-      }
-    >
+    <Suspense fallback={<Spinner label="👀Cloud Eye - Preparing Demo Data" />}>
       <Router>
         <Switch>
           <App />

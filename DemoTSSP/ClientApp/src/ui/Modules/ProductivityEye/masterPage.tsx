@@ -79,7 +79,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
           labelFormat: "{value}%",
         }}
         chartArea={{ border: { width: 0 } }}
-        title="Produktywność Ostatnie 14 Dni"
+        title="Productivity last 14 days"
         tooltip={{ enable: true }}
       >
         <Inject services={[StackingLineSeries, Category, Legend, Tooltip]} />
@@ -173,7 +173,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 : ""
             } `}
           >
-            <a>Moje Komputery</a>
+            <a>My Devices</a>
           </li>
           <li
             onClick={HandleTabClick(CurrentActiveTab.REPORT)}
@@ -181,7 +181,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
               currentActive == CurrentActiveTab.REPORT ? "is-active" : ""
             } `}
           >
-            <a>Raport</a>
+            <a>Report</a>
           </li>
           <li
             onClick={HandleTabClick(CurrentActiveTab.PRODUCTIVITY_SETTINGS)}
@@ -191,7 +191,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 : ""
             } `}
           >
-            <a>Ustawienia</a>
+            <a>Settings</a>
           </li>
         </ul>
       </div>

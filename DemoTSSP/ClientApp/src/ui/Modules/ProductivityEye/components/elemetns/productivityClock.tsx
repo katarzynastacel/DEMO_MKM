@@ -73,7 +73,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
             <AnnotationsDirective>
               {/*@ts-ignore*/}
               <AnnotationDirective
-                content={`<div style="color:#666666;font-size:35px;">Produktywność ${value} %</div>`}
+                content={`<div style="color:#666666;font-size:35px;">Productivity ${value} %</div>`}
                 angle={0}
                 radius="110%"
                 zIndex="1"

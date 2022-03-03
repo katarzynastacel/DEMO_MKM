@@ -83,8 +83,8 @@ const Component: React.FunctionComponent<IComponentProps> = (
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
         category: props.name,
         socialMedia: props.name,
-        activity: `"chrome - ${props.name} – log in or sign up - Google Chrome"`,
-        userName: "Jan Kowalski",
+        activity: `"chrome - ${props.name} – demo activity... - Google Chrome"`,
+        userName: "John Smith",
       },
       {
         ativityStart: "12:31:50",
@@ -94,8 +94,8 @@ const Component: React.FunctionComponent<IComponentProps> = (
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
         category: props.name,
         socialMedia: props.name,
-        activity: `"chrome - ${props.name} – Informacje o Maria Kowalska | ${props.name} - Google Chrome"`,
-        userName: "Jan Kowalski",
+        activity: `"chrome - ${props.name} – Latest BBC News | ${props.name} - Google Chrome"`,
+        userName: "James Jones",
       },
       {
         ativityStart: "14:12:41",
@@ -105,8 +105,8 @@ const Component: React.FunctionComponent<IComponentProps> = (
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
         category: props.name,
         socialMedia: props.name,
-        activity: `"chrome - ${props.name} –  Avon najlepsze okazje! 70% Off! | ${props.name} - Google Chrome"`,
-        userName: "Karolina Kowalska",
+        activity: `"chrome - ${props.name} –  Ebay 70% Off! | ${props.name} - Google Chrome"`,
+        userName: "William Taylor",
       },
       {
         ativityStart: "14:30:00",
@@ -116,8 +116,8 @@ const Component: React.FunctionComponent<IComponentProps> = (
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
         category: props.name,
         socialMedia: props.name,
-        activity: `"chrome - ${props.name} –  Kryptowaluty najlepsze koparki | ${props.name} - Google Chrome"`,
-        userName: "Marcin Bielik",
+        activity: `"chrome - ${props.name} –  Crypto - Bitcoin when to sell? | ${props.name} - Google Chrome"`,
+        userName: "Richard Brown",
       },
       {
         ativityStart: "15:20:00",
@@ -127,30 +127,30 @@ const Component: React.FunctionComponent<IComponentProps> = (
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
         category: props.name,
         socialMedia: props.name,
-        activity: `"chrome - ${props.name} –  Ranking gier w europie | ${props.name} - Google Chrome"`,
-        userName: "Karol Janas",
+        activity: `"chrome - ${props.name} –  Top 10 womens in tech | 2022 ${props.name} - Google Chrome"`,
+        userName: "Sarah Williams",
       },
     ]);
     setUsersOnMedia([
       {
         totalSeconds: 335,
         mkmID: "fbf0f2192-2b22-499c-b",
-        name: "Marcin Bielik",
+        name: "Sarah Williams",
       },
       {
         totalSeconds: 215,
         mkmID: "fbf0f2192-2b22-499c-b",
-        name: "Karol Janas",
+        name: "Richard Brown",
       },
       {
         totalSeconds: 190,
         mkmID: "fbf0f2192-2b22-499c-b",
-        name: "Karolina Kowalska",
+        name: "William Taylor",
       },
       {
         totalSeconds: 130,
         mkmID: "fbf0f-2b22-499c-a",
-        name: "Jan Kowalski",
+        name: "James Jones",
       },
     ]);
   };
@@ -165,8 +165,8 @@ const Component: React.FunctionComponent<IComponentProps> = (
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
         category: props.name,
         socialMedia: "Chrome",
-        activity: `Chrome - Jak oszukać pracodawcę?`,
-        userName: "Kamil Tryk",
+        activity: `chrome - jobs search London - Google Search`,
+        userName: "Richard Brown",
       },
 
       {
@@ -176,16 +176,16 @@ const Component: React.FunctionComponent<IComponentProps> = (
         type: "W",
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
         category: props.name,
-        socialMedia: "Chrome",
-        activity: `Chrome - olx praca dla geodety warszawa`,
-        userName: "Kamil Tryk",
+        socialMedia: "Richard Brown",
+        activity: `chrome - Senior Project Manager Jobs in London`,
+        userName: "Richard Brown",
       },
     ]);
     setUsersOnMedia([
       {
         totalSeconds: 307,
         mkmID: "fbf0f2192-2b22-499c-b",
-        name: "Kamil Tryk",
+        name: "Richard Brown",
       },
     ]);
   };
@@ -200,8 +200,8 @@ const Component: React.FunctionComponent<IComponentProps> = (
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
         category: props.name,
         socialMedia: props.name,
-        activity: `System Blokada Ekranu`,
-        userName: "Karolina Kowalska",
+        activity: `System - Locked Screen`,
+        userName: "William Taylor",
       },
 
       {
@@ -212,8 +212,8 @@ const Component: React.FunctionComponent<IComponentProps> = (
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
         category: props.name,
         socialMedia: props.name,
-        activity: `System Blokada Ekranu`,
-        userName: "Karol Janas",
+        activity: `System - Locked Screen`,
+        userName: "William Taylor",
       },
       {
         ativityStart: "14:12:41",
@@ -223,20 +223,20 @@ const Component: React.FunctionComponent<IComponentProps> = (
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
         category: props.name,
         socialMedia: props.name,
-        activity: `System Blokada Ekranu`,
-        userName: "Karolina Kowalska",
+        activity: `System - Locked Screen`,
+        userName: "Richard Brown",
       },
     ]);
     setUsersOnMedia([
       {
         totalSeconds: 1090,
         mkmID: "fbf0f2192-2b22-499c-b",
-        name: "Karolina Kowalska",
+        name: "William Taylor",
       },
       {
         totalSeconds: 215,
         mkmID: "fbf0f2192-2b22-499c-b",
-        name: "Karol Janas",
+        name: "Richard Brown",
       },
     ]);
   };
@@ -317,7 +317,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 style={{ textTransform: "uppercase" }}
                 className="has-text-centered is-size-1 has-text-primary"
               >
-                <b>Demo raport - {props.name}</b>
+                <b>Demo report - {props.name}</b>
               </div>
               <hr />
 
@@ -325,7 +325,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 <div className="columns">
                   <div className="column is-8">
                     <p className="lower-panel-header-text ">
-                      <b>Historia Aktywności ({logData.length})</b>
+                      <b>Activity History ({logData.length})</b>
                     </p>
                     <hr />
 
@@ -352,31 +352,31 @@ const Component: React.FunctionComponent<IComponentProps> = (
                       <ColumnsDirective>
                         <ColumnDirective
                           field="userName"
-                          headerText="Nazwa"
+                          headerText="Employee"
                           // template={ProductivityTemplate}
                           width="100px"
                         />
 
                         <ColumnDirective
                           field="ativityStart"
-                          headerText="Godzina"
+                          headerText="Time"
                           isPrimaryKey={true}
                           width="85px"
                         />
                         <ColumnDirective
                           field="totalDuration"
-                          headerText="Czas Trwania"
+                          headerText="Duration"
                           width="100px"
                         />
                         <ColumnDirective
                           field="category"
-                          headerText="Kategoria"
+                          headerText="Category"
                           width="100px"
                         />
 
                         <ColumnDirective
                           field="activity"
-                          headerText="Aktywność"
+                          headerText="Activity"
                           width="500px"
                         />
                       </ColumnsDirective>
@@ -407,7 +407,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                       {usersOnMedia.length > 0 && (
                         <AccumulationChartComponent
                           id="apps-chart-unique456asdf645324"
-                          title="Pracownicy"
+                          title="Duration"
                           legendSettings={{
                             visible: true,
                             position: "Bottom",
@@ -428,7 +428,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                           <AccumulationSeriesCollectionDirective>
                             <AccumulationSeriesDirective
                               dataSource={usersOnMedia}
-                              name="Pracownicy"
+                              name="Employee"
                               xName="name"
                               yName="totalSeconds"
                               explode={true}

@@ -57,7 +57,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
       <div className="settings-container">
         <div className="box">
           <p className="lower-panel-header-text ">
-            <b> Myszka & Klawiatura</b>
+            <b> MOUSE & KEYBOARD</b>
           </p>
           <hr />
 
@@ -65,11 +65,11 @@ const Component: React.FunctionComponent<IComponentProps> = (
             <div className="mouse-keyboard-wrapper">
               <div className="settings-card break-paid-card">
                 <div className="has-text-centered">
-                  <label className=" lower-panel-header-text">Monitoruj?</label>
+                  <label className=" lower-panel-header-text">Monitor?</label>
                 </div>
 
                 <div className="arrow-container">
-                  <div>Tak</div>
+                  <div>Yes</div>
                 </div>
 
                 <div>
@@ -85,10 +85,10 @@ const Component: React.FunctionComponent<IComponentProps> = (
               <div className="mouse-setting-items">
                 <div className="box">
                   <p className="lower-panel-header-text ">
-                    <i className="fas fa-mouse-pointer"></i> <b> Myszka </b>
+                    <i className="fas fa-mouse-pointer"></i> <b> Mouse </b>
                   </p>
                   <p className="lower-panel-header-text ">
-                    Zarejestruj Nieaktywność PO
+                    MOUSE REGISTER INACTIVITY AFTER
                   </p>
                   <input
                     value={monitoringSettings.mouseIdleMinutes}
@@ -98,15 +98,15 @@ const Component: React.FunctionComponent<IComponentProps> = (
                     max={1200}
                     className="input"
                   />
-                  <p className="lower-panel-header-text ">minutach</p>
+                  <p className="lower-panel-header-text ">MINUTES</p>
                 </div>
 
                 <div className="box">
                   <p className="lower-panel-header-text ">
-                    <i className="fas fa-keyboard"></i> <b> Klawiatura </b>
+                    <i className="fas fa-keyboard"></i> <b> KEYBOARD </b>
                   </p>
                   <p className="lower-panel-header-text ">
-                    Zarejestruj NIEAKTYWNOŚĆ po
+                    KEYBOARd REGISTER INACTIVITY AFTER
                   </p>
                   <input
                     value={monitoringSettings.keyboardIdleMinutes}
@@ -116,11 +116,11 @@ const Component: React.FunctionComponent<IComponentProps> = (
                     max={1200}
                     className="input"
                   />
-                  <p className="lower-panel-header-text ">minutach</p>
+                  <p className="lower-panel-header-text ">minutes</p>
                 </div>
               </div>
               <div className="btn-flex">
-                <button className="button is-primary">Zapisz Zmiany</button>
+                <button className="button is-primary">Submit Changes</button>
               </div>
             </div>
           </div>
@@ -128,37 +128,37 @@ const Component: React.FunctionComponent<IComponentProps> = (
         <div className="box">
           <p className="lower-panel-header-text has-text-centered">
             <i className="fas fa-laptop-code"></i>{" "}
-            <b>Nie monitoruj komputerów w godzinach</b>
+            <b>DO NOT MONITOR COMPUTERS IN HOURS</b>
           </p>
 
           <hr />
           <div className="time-picker-container">
             <div className="time-picker-wrapper">
               <div className="time-container">
-                <label className="label">Od Godziny</label>
+                <label className="label">FROM</label>
                 <TimePickerComponent
                   width="100%"
                   format="HH:mm:ss"
                   value={selectedStartDate}
-                  placeholder="Wybierz czas"
+                  placeholder="select time"
                   step={15}
                 />
               </div>
 
               <div className="time-container">
-                <label className="label">Do Godziny</label>
+                <label className="label">till</label>
                 <TimePickerComponent
                   format="HH:mm:ss"
                   width="100%"
                   value={selectedEndDate}
-                  placeholder="Wybierz czas"
+                  placeholder="select time"
                   step={15}
                 />
               </div>
             </div>
             <div className="btn-flex">
               <button className="button is-info">
-                Dodaj <b>+</b>
+                Submit <b>+</b>
               </button>
             </div>
           </div>
@@ -167,9 +167,9 @@ const Component: React.FunctionComponent<IComponentProps> = (
 
           <table className="table is-fullwidth is-striped">
             <thead className="head">
-              <th className="th">Od Godziny</th>
-              <th className="th">Do Godziny</th>
-              <th className="th">Usuń</th>
+              <th className="th">From</th>
+              <th className="th">Till</th>
+              <th className="th">Remove</th>
             </thead>
             <tbody className="tbody">
               {monitoringSettings.timeToSkip !== null &&
