@@ -2,6 +2,7 @@ import React, { useContext, useState, useEffect } from "react";
 import styled from "styled-components";
 //@ts-ignore
 import socialMedia from "../icons/socialMedia.PNG";
+
 import { MonitoringSettings } from "./settingsMonitoring";
 interface IComponentProps {
   className?: string;

@@ -22,7 +22,10 @@ import {
 } from "@syncfusion/ej2-react-charts";
 import moment from "moment";
 import { Browser } from "@syncfusion/ej2-base";
-
+//@ts-ignore
+import logo from "../ProductivityEye/icons/agatalogo.png";
+//@ts-ignore
+import offert from "../ProductivityEye/icons/test.jpg";
 interface IComponentProps {
   className?: string;
 }
@@ -40,6 +43,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
   const [currentActive, setCurrentActive] = useState<CurrentActiveTab>(
     CurrentActiveTab.REPORT
   );
+  const [isActive, setIsActive] = useState(true);
 
   /*   useEffect(() => {
     SendMeEmail("Ktos wlasnie otworzyl demo Kontrola komputera pracownika");
@@ -53,6 +57,38 @@ const Component: React.FunctionComponent<IComponentProps> = (
 
   return (
     <div className={props.className}>
+      <div className={`modal ${isActive ? "is-active" : ""}`}>
+        <div className="modal-background"></div>
+        <div className="modal-card">
+          <header className="modal-card-head">
+            <p
+              style={{ fontSize: 16, fontWeight: 700 }}
+              className="modal-card-title"
+            >
+              {" "}
+              <img
+                width={100}
+                alt="clock in image"
+                className="module-image"
+                src={logo}
+              />{" "}
+              Agata Business Services
+            </p>
+          </header>
+          <section className="modal-card-body">
+            <img alt="clock in image" className="module-image" src={offert} />
+          </section>
+          <footer className="modal-card-foot">
+            <button
+              onClick={() => setIsActive(false)}
+              style={{ fontSize: 16 }}
+              className="button is-success"
+            >
+              Start Demo
+            </button>
+          </footer>
+        </div>
+      </div>
       <ChartComponent
         id="demo-master-id16838"
         style={{ textAlign: "center" }}

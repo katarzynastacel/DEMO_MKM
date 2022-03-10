@@ -12,7 +12,7 @@ export const DemoTabs: React.FunctionComponent<IComponent> = (
     <div className="tabs is-centered">
       <ul>
         <li className={props.currentActive === 8 ? "is-active" : ""}>
-          <a>Free 14 days - Register and try me👀!</a>
+          <a>Agata Business Services</a>
         </li>
       </ul>
     </div>

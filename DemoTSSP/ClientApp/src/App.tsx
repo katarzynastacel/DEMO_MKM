@@ -29,6 +29,7 @@ export const App: React.FunctionComponent<IAppProps> = (props: IAppProps) => {
       <Route exact path="/">
         <>
           <DemoTabs currentActive={8} />
+
           <ProductivityMasterPage />
         </>
       </Route>
