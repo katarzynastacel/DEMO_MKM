@@ -76,19 +76,19 @@ const Component: React.FunctionComponent<IComponentProps> = (
   const loadSocialMedia = () => {
     setLogData([
       {
-        ativityStart: "11:30:55",
-        totalDuration: "00:00:40",
+        ativityStart: "10:00:08",
+        totalDuration: "00:48:20",
         productive: 1,
         type: "W",
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
         category: props.name,
         socialMedia: props.name,
-        activity: `"chrome - ${props.name} – demo activity... - Google Chrome"`,
-        userName: "John Smith",
+        activity: `"chrome - ${props.name} –  Crypto - Bitcoin when to sell? | ${props.name} - Google Chrome"`,
+        userName: "Richard Brown",
       },
       {
         ativityStart: "12:31:50",
-        totalDuration: "00:01:30",
+        totalDuration: "00:03:10",
         productive: 1,
         type: "W",
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
@@ -99,7 +99,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
       },
       {
         ativityStart: "14:12:41",
-        totalDuration: "00:03:10",
+        totalDuration: "00:03:15",
         productive: 1,
         type: "W",
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
@@ -108,20 +108,10 @@ const Component: React.FunctionComponent<IComponentProps> = (
         activity: `"chrome - ${props.name} –  Ebay 70% Off! | ${props.name} - Google Chrome"`,
         userName: "William Taylor",
       },
-      {
-        ativityStart: "14:30:00",
-        totalDuration: "00:05:35",
-        productive: 1,
-        type: "W",
-        mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-        category: props.name,
-        socialMedia: props.name,
-        activity: `"chrome - ${props.name} –  Crypto - Bitcoin when to sell? | ${props.name} - Google Chrome"`,
-        userName: "Richard Brown",
-      },
+
       {
         ativityStart: "15:20:00",
-        totalDuration: "00:03:35",
+        totalDuration: "00:05:35",
         productive: 1,
         type: "W",
         mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
@@ -133,22 +123,23 @@ const Component: React.FunctionComponent<IComponentProps> = (
     ]);
     setUsersOnMedia([
       {
-        totalSeconds: 335,
-        mkmID: "fbf0f2192-2b22-499c-b",
-        name: "Sarah Williams",
-      },
-      {
-        totalSeconds: 215,
+        totalSeconds: 2900,
         mkmID: "fbf0f2192-2b22-499c-b",
         name: "Richard Brown",
       },
       {
-        totalSeconds: 190,
+        totalSeconds: 335,
+        mkmID: "fbf0f2192-2b22-499c-b",
+        name: "Sarah Williams",
+      },
+
+      {
+        totalSeconds: 195,
         mkmID: "fbf0f2192-2b22-499c-b",
         name: "William Taylor",
       },
       {
-        totalSeconds: 130,
+        totalSeconds: 190,
         mkmID: "fbf0f-2b22-499c-a",
         name: "James Jones",
       },

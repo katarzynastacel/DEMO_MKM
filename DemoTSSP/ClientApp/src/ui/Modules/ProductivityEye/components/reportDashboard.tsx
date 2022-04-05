@@ -1349,9 +1349,13 @@ const Component: React.FunctionComponent<IComponentProps> = (
                       <td className="td has-text-centered">
                         {getProductivityTemplate(r.overallProductivity)}
                       </td>
-                      {index === 0 && (
-                        <td className="td has-text-centered">
+                      {index === 0 ? (
+                        <td className="td">
                           <button className="button is-info">Click me</button>
+                        </td>
+                      ) : (
+                        <td className="td">
+                          <p></p>
                         </td>
                       )}
                     </tr>
@@ -1404,9 +1408,13 @@ const Component: React.FunctionComponent<IComponentProps> = (
                           )}
                         </div>
                       </td>
-                      {index === 0 && (
+                      {index === 0 ? (
                         <td className="td">
                           <button className="button is-info">Click me</button>
+                        </td>
+                      ) : (
+                        <td className="td">
+                          <p></p>
                         </td>
                       )}
                     </tr>
@@ -1517,9 +1525,13 @@ const Component: React.FunctionComponent<IComponentProps> = (
                           )}
                         </div>
                       </td>
-                      {index === 0 && (
+                      {index === 0 ? (
                         <td className="td">
                           <button className="button is-info">Click me</button>
+                        </td>
+                      ) : (
+                        <td className="td">
+                          <p></p>
                         </td>
                       )}
                     </tr>
@@ -1640,9 +1652,13 @@ const Component: React.FunctionComponent<IComponentProps> = (
                           )}
                         </div>
                       </td>
-                      {index === 0 && (
+                      {index === 0 ? (
                         <td className="td">
                           <button className="button is-info">Click me</button>
+                        </td>
+                      ) : (
+                        <td className="td">
+                          <p></p>
                         </td>
                       )}
                     </tr>
@@ -1732,9 +1748,13 @@ const Component: React.FunctionComponent<IComponentProps> = (
                           )}
                         </div>
                       </td>
-                      {index === 0 && (
+                      {index === 0 ? (
                         <td className="td">
                           <button className="button is-info">Click me</button>
+                        </td>
+                      ) : (
+                        <td className="td">
+                          <p></p>
                         </td>
                       )}
                     </tr>
@@ -1801,9 +1821,13 @@ const Component: React.FunctionComponent<IComponentProps> = (
                           )}
                         </div>
                       </td>
-                      {index === 0 && (
+                      {index === 0 ? (
                         <td className="td">
                           <button className="button is-info">Click me</button>
+                        </td>
+                      ) : (
+                        <td className="td">
+                          <p></p>
                         </td>
                       )}
                     </tr>
