@@ -115,8 +115,15 @@ const Component: React.FunctionComponent<IComponentProps> = (
     },
 
     {
-      overallProductivity: 25,
+      overallProductivity: 40,
       name: "Richard Brown",
+      totalUnproductiveSeconds: 10000,
+      totalProductiveSeconds: 8000,
+      mkmID: "ec1926192.168.0.60_5-dd75-46a7-8",
+    },
+    {
+      overallProductivity: 23,
+      name: "Margaret Wilson",
       totalUnproductiveSeconds: 15000,
       totalProductiveSeconds: 5000,
       mkmID: "ec1926192.168.0.60_5-dd75-46a7-8",
@@ -168,7 +175,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
     ITop10PopularWebsites[]
   >([
     {
-      totalSeconds: 3200,
+      totalSeconds: 3620,
       name: "Youtube",
     },
     {
@@ -224,39 +231,50 @@ const Component: React.FunctionComponent<IComponentProps> = (
       name: "Sarah Williams",
     },
     {
-      totalSeconds: 2200,
+      totalSeconds: 750,
+      websiteName: "Twitter",
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+      name: "Sarah Williams",
+    },
+    {
+      totalSeconds: 1000,
       websiteName: "Instagram",
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
       name: "Sarah Williams",
     },
     {
-      totalSeconds: 1900,
-      websiteName: "Ebay",
-      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
-      name: "Margaret Wilson",
-    },
-
-    {
-      totalSeconds: 1354,
-      websiteName: "Pinterest",
+      totalSeconds: 499,
+      websiteName: "TikTok",
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
       name: "William Taylor",
     },
     {
-      totalSeconds: 1354,
+      totalSeconds: 582,
+      websiteName: "WeChat",
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+      name: "William Taylor",
+    },
+    {
+      totalSeconds: 200,
+      websiteName: "Ebay",
+      mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
+      name: "Margaret Wilson",
+    },
+    {
+      totalSeconds: 6,
       websiteName: "BBC News",
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
       name: "William Taylor",
     },
     {
-      totalSeconds: 900,
+      totalSeconds: 5,
       websiteName: "Twitch",
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
       name: "Richard Brown",
     },
     {
-      totalSeconds: 300,
-      websiteName: "TikTok",
+      totalSeconds: 4,
+      websiteName: "Pinterest",
       mkmID: "fbf0fe192.168.0.60_7-2b22-499c-9",
       name: "William Taylor",
     },
@@ -903,11 +921,14 @@ const Component: React.FunctionComponent<IComponentProps> = (
     setSelectedReportMode(IReportMode.LockedScreen);
   };
 
-  const handleShowKeyboardMouseActivity = (mkmID: string) => {
+  const handleShowKeyboardMouseActivity = (mkmID: string, index: number) => {
     return () => {
       let record = mouseKeyboardActivity.find((x) => x.mkmID === mkmID);
 
       if (record) {
+        if (index > 0) {
+          return;
+        }
         setRecordForMouseKeyboardActiviy(record);
       }
     };
@@ -999,8 +1020,14 @@ const Component: React.FunctionComponent<IComponentProps> = (
     return <p>{name}</p>;
   };
 
-  const handleUserRecordClick = (selectedUser: IUserProductivityRecord) => {
+  const handleUserRecordClick = (
+    selectedUser: IUserProductivityRecord,
+    index: number
+  ) => {
     return () => {
+      if (index > 0) {
+        return;
+      }
       setSelectedUser(selectedUser);
     };
   };
@@ -1013,8 +1040,11 @@ const Component: React.FunctionComponent<IComponentProps> = (
     setModalTittleToRender("");
   };
 
-  const HandleShowSocialMediaDetails = (modalTittle: string) => {
+  const HandleShowSocialMediaDetails = (modalTittle: string, index: number) => {
     return () => {
+      if (index > 0) {
+        return;
+      }
       setSelectedReportMode(IReportMode.SocialMedia);
       setModalTittleToRender(modalTittle);
     };
@@ -1272,7 +1302,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 {usersData.map((r, index) => {
                   return (
                     <tr
-                      onClick={handleUserRecordClick(r)}
+                      onClick={handleUserRecordClick(r, index)}
                       className="tr tr-click-user"
                     >
                       <td className="td">{getNameTemplate(r.name, index)}</td>
@@ -1319,10 +1349,11 @@ const Component: React.FunctionComponent<IComponentProps> = (
                       <td className="td has-text-centered">
                         {getProductivityTemplate(r.overallProductivity)}
                       </td>
-
-                      <td className="td has-text-centered">
-                        <button className="button is-info">Click me</button>
-                      </td>
+                      {index === 0 && (
+                        <td className="td has-text-centered">
+                          <button className="button is-info">Click me</button>
+                        </td>
+                      )}
                     </tr>
                   );
                 })}
@@ -1346,7 +1377,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 {top10PopularWebsites.map((r, index) => {
                   return (
                     <tr
-                      onClick={HandleShowSocialMediaDetails(r.name)}
+                      onClick={HandleShowSocialMediaDetails(r.name, index)}
                       className="tr tr-click-user"
                     >
                       <td className="td">
@@ -1373,9 +1404,11 @@ const Component: React.FunctionComponent<IComponentProps> = (
                           )}
                         </div>
                       </td>
-                      <td className="td">
-                        <button className="button is-info">Click me</button>
-                      </td>
+                      {index === 0 && (
+                        <td className="td">
+                          <button className="button is-info">Click me</button>
+                        </td>
+                      )}
                     </tr>
                   );
                 })}
@@ -1455,7 +1488,10 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 {mostUsedSocialMedia.map((r, index) => {
                   return (
                     <tr
-                      onClick={HandleShowSocialMediaDetails(r.websiteName)}
+                      onClick={HandleShowSocialMediaDetails(
+                        r.websiteName,
+                        index
+                      )}
                       className="tr tr-click-user"
                     >
                       <td className="td">{r.websiteName}</td>
@@ -1481,9 +1517,11 @@ const Component: React.FunctionComponent<IComponentProps> = (
                           )}
                         </div>
                       </td>
-                      <td className="td">
-                        <button className="button is-info">Click me</button>
-                      </td>
+                      {index === 0 && (
+                        <td className="td">
+                          <button className="button is-info">Click me</button>
+                        </td>
+                      )}
                     </tr>
                   );
                 })}
@@ -1573,7 +1611,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 {top10InactiveKeyboard.map((r, index) => {
                   return (
                     <tr
-                      onClick={handleShowKeyboardMouseActivity(r.mkmID)}
+                      onClick={handleShowKeyboardMouseActivity(r.mkmID, index)}
                       className="tr tr-click-user"
                       key={index}
                     >
@@ -1602,9 +1640,11 @@ const Component: React.FunctionComponent<IComponentProps> = (
                           )}
                         </div>
                       </td>
-                      <td className="td">
-                        <button className="button is-info">Click me</button>
-                      </td>
+                      {index === 0 && (
+                        <td className="td">
+                          <button className="button is-info">Click me</button>
+                        </td>
+                      )}
                     </tr>
                   );
                 })}
@@ -1641,7 +1681,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                   return (
                     <tr
                       key={index}
-                      onClick={handleShowKeyboardMouseActivity(r.mkmID)}
+                      onClick={handleShowKeyboardMouseActivity(r.mkmID, index)}
                       className="tr tr-click-user"
                     >
                       <td className="td">{r.userName}</td>
@@ -1692,9 +1732,11 @@ const Component: React.FunctionComponent<IComponentProps> = (
                           )}
                         </div>
                       </td>
-                      <td className="td">
-                        <button className="button is-info">Click me</button>
-                      </td>
+                      {index === 0 && (
+                        <td className="td">
+                          <button className="button is-info">Click me</button>
+                        </td>
+                      )}
                     </tr>
                   );
                 })}
@@ -1730,7 +1772,7 @@ const Component: React.FunctionComponent<IComponentProps> = (
                 {top10InactiveMouse.map((r, index) => {
                   return (
                     <tr
-                      onClick={handleShowKeyboardMouseActivity(r.mkmID)}
+                      onClick={handleShowKeyboardMouseActivity(r.mkmID, index)}
                       key={index}
                       className="tr tr-click-user"
                     >
@@ -1759,9 +1801,11 @@ const Component: React.FunctionComponent<IComponentProps> = (
                           )}
                         </div>
                       </td>
-                      <td className="td">
-                        <button className="button is-info">Click me</button>
-                      </td>
+                      {index === 0 && (
+                        <td className="td">
+                          <button className="button is-info">Click me</button>
+                        </td>
+                      )}
                     </tr>
                   );
                 })}
